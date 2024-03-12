@@ -1,3 +1,6 @@
+from .models import Task
+
+
 from django.shortcuts import render
 
 # Create your views here.
@@ -11,4 +14,10 @@ def addtask(request):
 
 
 def yourtasks(request):
-    return render(request, 'tasks/yourtasks.html')
+    task = Task.objects.all()
+    context = {
+        'tasks': task
+    }
+    return render(request, 'tasks/yourtasks.html', context)
+
+

@@ -1,14 +1,44 @@
 {% extends 'base.html' %}
 
+{% load static %}
 
 {% block content%}
-
-
 <section>
-    <div>
-        <h1>Your tasks</h1>
 
+    <div class="task-heading">
+        <h1>Your Tasks</h1>
     </div>
+    {% if tasks%}
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Title</th>
+            <th scope="col">Due on</th>
+            <th scope="col">Completed</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+            {% for task in tasks %}
+          <tr>
+            <th scope="row">#</th>
+            <td>{{task.title}}</td>
+            <td>{{task.due_date}}</td>
+            <td>{% if task.completed == True%}Yes{% else %} No {% endif%}</td>
+            <td><span><a href="">Edit</a></span> <span><a href="">Delete</a></span></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+        
+      </table>
+      {% else %}
+      <div class="no-task">
+        <p>You have not added any tasks</p>
+      </div>
+      {% endif %}
+
 </section>
 
 {% endblock %}
