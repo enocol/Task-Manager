@@ -81,7 +81,6 @@ body {
 .addtask {
     width: 60%;
     padding: 20px;
-    background-color: #040c53;
     border-radius: 5px;
     border: 1px solid grey;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -114,9 +113,18 @@ body {
 
 .login {
     margin: 100px auto;
-    background-color: #040c53;
 }
 
+
+.update-task {
+    width: 60%;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
+    height: auto;
+}
   
 @media screen and (min-width: 368px) {
     .footer {
