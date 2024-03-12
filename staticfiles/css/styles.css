@@ -19,11 +19,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #ffcc00;
+    border-bottom: 5px solid #fff;
     max-height: 100px;
     height: 70px;
     color: #f0f0f0;
     padding: 0 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
     
 }
 .nav-bar { 
@@ -43,11 +48,6 @@ body {
     margin: 0;
 }
 
-.navbar ul a {
-   
-    color: #000;
-    
-}
 
 .task {
     display: flex;
@@ -66,20 +66,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100px;
+    text-align: center;
+    margin: 0 auto;
+    width: 60%;
+    height: 50vh;
+    background-color: #f0f0f0;
 }
 
 .page-intro p {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
-.task-heading {
-    font-size: 20px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0;
+
+
+.add-task {
+    margin-top: 100px;
 }
 
 .no-task {
@@ -94,7 +96,24 @@ body {
     color: #f0f0f0;
     padding: 10px;
     text-align: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
+    margin-top: 20px;
+    left: 0;
+}
+
+.task-section {
+    margin-top: 100px;
+}
+
+
+  
+@media screen and (min-width: 368px) {
+    .footer {
+        bottom: 0;
+        width: 100%;
+
+    }
+    
 }
