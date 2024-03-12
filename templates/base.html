@@ -1,5 +1,9 @@
 {% load static %}
 
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +20,17 @@
         <nav class="nav-bar ">
             <ul class="nav-items">
                 <li><a href="{% url 'home'%}">Home</a></li>
+                <li> <a href="">About</a></li>
+                {% if user.is_authenticated %}
                 <li> <a href="{% url 'yourtasks'%}">Your tasks</a></li>
                 <li><a href="{% url 'addtask'%}">Add Task</a></li>
+                <li><a href="{% url  'account_logout'%}">Logout</a></li>
+                <li>Welcome {{user}}</li>
+                {% else %}
+                <li><a href="{% url 'account_login'%}">Login</a></li>
+                <li><a href="{% url 'account_signup'%}">Register</a></li>
+                
+                {% endif %}
             </ul>
         </nav>
     </header>

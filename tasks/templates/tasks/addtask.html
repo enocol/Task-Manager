@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
-
-
+{% load static %}
 {% block content%}
 
 
-<section>
+<section class="add-task">
     <h1>Add tasks</h1>
+    <form action="{% url 'addtask'%}" method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Add Task</button>
+
+    </form>
+   
       
 </section>
 
