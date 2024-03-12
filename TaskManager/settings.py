@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'tasks.apps.TasksConfig'
+    'tasks.apps.TasksConfig',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 SITE_ID = 1

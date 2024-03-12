@@ -29,10 +29,26 @@ def addtask(request):
 
 
 def yourtasks(request):
-    task = Task.objects.all()
+    task = Task.objects.all().order_by('created_on')
     context = {
         'tasks': task
     }
     return render(request, 'tasks/yourtasks.html', context)
+
+
+def updatetask(request, id):
+    task = Task.objects.get(id=id)
+    form = Addtask(instance=task)
+    context = {
+        'form': form
+    }
+
+    if request.method == 'POST':
+        form = Addtask(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Task updated successfully')
+            return redirect('yourtasks')
+    return render(request, 'tasks/updatetask.html', context)
 
 

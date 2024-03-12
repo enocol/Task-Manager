@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block content%}
 
 
-<section class="add-task">
+<section class="addtask">
     <h1>Add tasks</h1>
+    <p>
+        Add a new task to your list.
+    </p>
     <form action="{% url 'addtask'%}" method="post">
         {% csrf_token %}
-        {{form}}
+        {{form | crispy}}
         <button type="submit">Add Task</button>
 
     </form>

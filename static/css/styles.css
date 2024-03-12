@@ -57,7 +57,7 @@ body {
     margin: 10px;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -78,12 +78,15 @@ body {
     font-weight: 600;
 }
 
-
-
-.add-task {
-    margin-top: 100px;
+.addtask {
+    width: 60%;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
+    height: auto;
 }
-
 .no-task {
     display: flex;
     justify-content: center;
@@ -108,6 +111,21 @@ body {
 }
 
 
+.login {
+    margin: 100px auto;
+}
+
+
+.update-task {
+    width: 60%;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
+    height: auto;
+
+}
   
 @media screen and (min-width: 368px) {
     .footer {

@@ -29,10 +29,10 @@
           {% if task.user == user %}
             <tr>
               <th scope="row">#</th>
-              <td>{{ task.title }}</td>
+              <td><a href="">{{ task.title }}</a></td>
               <td>{{ task.due_date }}</td>
               <td>{% if task.completed %}Yes{% else %}No{% endif %}</td>
-              <td><span><a href="">Edit</a></span> <span><a href="">Delete</a></span></td>
+              <td><span><a href="{% url 'updatetask' task.id %}">Edit</a></span> <span><a href="">Delete</a></span></td>
             </tr>
         
           
