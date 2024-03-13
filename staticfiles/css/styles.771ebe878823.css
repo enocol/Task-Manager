@@ -144,10 +144,11 @@ body {
 }
 
 .cancel-button {
+   
     margin: 10px;
     padding: 10px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid blue;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     text-decoration: none;
@@ -155,18 +156,14 @@ body {
 
 }
 
-
-.cancel-button :hover {
+.cancel-button:hover {
     background-color: blue;
     color: #fff;
 }
 
 .cancel-button a {
     text-decoration: none;
-    color: blue;
 }
-
-
 button {
     padding: 10px;
     background-color: #fff;
@@ -175,6 +172,7 @@ button {
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
 
 }
 

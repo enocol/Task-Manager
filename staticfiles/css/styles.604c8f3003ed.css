@@ -155,10 +155,12 @@ body {
 
 }
 
-
-.cancel-button :hover {
+.cancel-button:hover a {
     background-color: blue;
     color: #fff;
+    width: 100%;
+    text-align: center;
+    height: 100%;
 }
 
 .cancel-button a {
@@ -175,6 +177,7 @@ button {
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
 
 }
 

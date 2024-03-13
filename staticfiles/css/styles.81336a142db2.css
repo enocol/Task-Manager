@@ -144,43 +144,16 @@ body {
 }
 
 .cancel-button {
+   
     margin: 10px;
     padding: 10px;
     background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid blue;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    text-decoration: none;
-    color: blue;
-
-}
-
-
-.cancel-button :hover {
-    background-color: blue;
-    color: #fff;
-}
-
-.cancel-button a {
-    text-decoration: none;
-    color: blue;
-}
-
-
-button {
-    padding: 10px;
-    background-color: #fff;
-    color: blue;
-    border: 1px solid blue;
     border-radius: 10px;
-    cursor: pointer;
+    border: 1px solid grey;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: blue;
 
-}
-
-button:hover {
-    background-color: blue;
-    color: #fff;
 }
   
 @media screen and (min-width: 368px) {
