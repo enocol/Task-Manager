@@ -30,9 +30,11 @@ def addtask(request):
 
 def yourtasks(request):
     task = Task.objects.all().order_by('created_on')
+    
     context = {
         'tasks': task
     }
+
     return render(request, 'tasks/yourtasks.html', context)
 
 
@@ -59,6 +61,22 @@ def taskdetails(request, id):
         'task': task,
         'completed': completed
     }
+
+    if request.method == 'POST':
+        completed = Updatetask(request.POST, instance=task)
+        if completed.is_valid():
+            completed.save()
+            messages.success(request, 'Task updated successfully')
+            return redirect('yourtasks')
     return render(request, 'tasks/taskdetails.html', context)
+
+
+
+def completedtask(request):
+    completed= Task.objects.filter(completed=True)
+    context = {
+        'completed_tasks': completed
+    }
+    return render(request, 'tasks/completedtask.html', context)
 
 
