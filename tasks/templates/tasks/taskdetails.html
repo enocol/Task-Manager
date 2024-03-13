@@ -6,7 +6,17 @@
 {% block content %}
 
 <section class="task-details">
+    
     <div >
+        {% if task.completed %}
+            <p>
+                <strong>Status:</strong> Completed
+            </p>
+        {% else %}
+            <p>
+                <strong>Status:</strong> Pending
+            </p>
+        {% endif %}
         <h1>Task Details</h1>
         <p>
             <strong>Title:</strong> {{ task.title }}
@@ -25,9 +35,10 @@
 
         </p>
         <div>
-        <form action="">
-                {{completed}}
-                <input type="submit" value="Mark as completed">
+        <form action="" method="post">
+            {% csrf_token %}
+             {{completed}}
+            <button type="submit">Update Status</button>
         </form>
             
         </div>

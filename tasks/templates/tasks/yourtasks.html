@@ -3,11 +3,7 @@
 {% block content%}
 
  <section class="task-section">
-  {% for message in messages %}
-    <div class="alert alert-{{ message.tags }}">
-      {{ message }}
-    </div>
-  {% endfor %}
+
      <div >
         <h1>Your Tasks</h1>
     </div>
@@ -17,8 +13,8 @@
           <tr>
             <th scope="col">No</th>
             <th scope="col">Title</th>
-            <th scope="col">Due on</th>
-            <th scope="col">Completed</th>
+            <th scope="col">Details</th>
+            <th scope="col">Status</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
@@ -27,15 +23,15 @@
           
           {% for task in tasks %}
           {% if task.user == user %}
+          {% if not task.completed %}
             <tr>
               <th scope="row">#</th>
-              <td><a href="{% url 'taskdetails' task.id %}">{{ task.title }}</a></td>
-              <td>{{ task.due_date }}</td>
-              <td>{% if task.completed %}Yes{% else %}No{% endif %}</td>
-              <td><span><a href="{% url 'updatetask' task.id %}">Edit</a></span> <span><a href="">Delete</a></span></td>
+              <td>{{ task.title }}</td>
+              <td><a href="{% url 'taskdetails' task.id %}">View</a></td>
+              <td>{% if not task.completed%}Pending{%endif%}</td>
+              <td><span><a href="{% url 'updatetask' task.id %}">Update</a> |</span> <span><a href="">Delete</a></span></td>
             </tr>
-        
-          
+            {% endif %}
           {% endif %}
           {% endfor %}
 
@@ -43,7 +39,7 @@
         {% else %}   
      
         <tr>
-          <td>No tasks found</td>
+          <td>You do not have any task</td>
         </tr>   
        {% endif %} 
       </table>

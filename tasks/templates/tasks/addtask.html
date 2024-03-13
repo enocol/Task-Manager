@@ -12,7 +12,11 @@
     <form action="{% url 'addtask'%}" method="post">
         {% csrf_token %}
         {{form | crispy}}
+       <div class="controls">
         <button type="submit">Add Task</button>
+        <div class="cancel-button"><a href="{% url 'yourtasks'%}">Cancel</a>
+       </div>
+       </div>
 
     </form>
    
