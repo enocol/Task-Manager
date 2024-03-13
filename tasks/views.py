@@ -1,7 +1,7 @@
 from .models import Task
 from django.shortcuts import redirect, render
 from django.contrib import messages
-from .form import Addtask
+from .form import Addtask, Updatetask
 
 # Create your views here.
 
@@ -50,5 +50,15 @@ def updatetask(request, id):
             messages.success(request, 'Task updated successfully')
             return redirect('yourtasks')
     return render(request, 'tasks/updatetask.html', context)
+
+
+def taskdetails(request, id):
+    task = Task.objects.get(id=id)
+    completed = Updatetask(instance=task)
+    context = {
+        'task': task,
+        'completed': completed
+    }
+    return render(request, 'tasks/taskdetails.html', context)
 
 

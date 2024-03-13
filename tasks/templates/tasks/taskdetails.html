@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% load static %}
+
+
+
+{% block content %}
+
+<section class="task-details">
+    <div >
+        <h1>Task Details</h1>
+        <p>
+            <strong>Title:</strong> {{ task.title }}
+        </p>
+        <p>
+            <strong>Description:</strong> {{ task.description }}
+        </p>
+        <p>
+            <strong>Due on:</strong> {{ task.due_date }}
+        </p>
+        <p>
+            <strong>Created on:</strong> {{ task.created_on }}
+        </p>
+        <p>
+            <strong>Created by:</strong> {{ task.user }}
+
+        </p>
+        <div>
+        <form action="">
+                {{completed}}
+                <input type="submit" value="Mark as completed">
+        </form>
+            
+        </div>
+
+        <p>
+            <a href="{% url 'yourtasks' %}">Back to your tasks</a>
+        </p>
+    </div>
+</section>
+
+{% endblock %}

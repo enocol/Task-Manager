@@ -12,3 +12,13 @@ class Addtask(forms.ModelForm):
         widgets = {
             'due_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
         }
+
+
+
+class Updatetask(forms.ModelForm):
+
+   
+    class Meta():
+        model = Task
+        fields = ['completed']
+       

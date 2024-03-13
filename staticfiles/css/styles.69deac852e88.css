@@ -64,7 +64,7 @@ body {
 .page-intro {
     height: 100px;
     text-align: center;
-    margin: 100px auto;
+    margin: 0 auto;
     width: 60%;
     height: 50vh;
     background-color: #f0f0f0;

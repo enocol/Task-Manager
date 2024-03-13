@@ -62,12 +62,9 @@ body {
 }
 
 .page-intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100px;
     text-align: center;
-    margin: 0 auto;
+    margin: 100px auto;
     width: 60%;
     height: 50vh;
     background-color: #f0f0f0;
@@ -124,6 +121,14 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     margin: 100px auto;
     height: auto;
+}
+
+.task-details {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
   
 @media screen and (min-width: 368px) {
