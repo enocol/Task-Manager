@@ -39,7 +39,7 @@ body {
    
 }
 
-.nav-items {
+.nav-bar ul {
     display: flex;
     gap: 20px;
     justify-content: flex-end;
@@ -200,7 +200,7 @@ button:hover {
     
 }
 
-.background {
+   .background {
     background-color: #f0f0f0;
 
 }
@@ -209,7 +209,9 @@ button:hover {
     display: none;
 }
 
-
+.show-hide-menu {
+    display: block;
+}
 
   
 @media screen and (max-width: 768px) {
@@ -219,26 +221,11 @@ button:hover {
 
     #mobile-menu {
         display: block;
-        position: fixed;
-        top: 10px;
+        position: absolute;
+        top: 0;
         right: 0;
         margin: 10px;
         cursor: pointer;
-        flex-direction: column;
-    }
-
-    .show-hide-menu {
-        display: block;
-        position: fixed;
-        top: 50px;
-        right: 0;
-        cursor: pointer;
-        background-color: #333;
-        width: 100%;
-        height: 30vh;
-        z-index: 100;
-        padding-left: 20px;
-        list-style: none;
     }
     
 }
