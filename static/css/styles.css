@@ -182,6 +182,29 @@ button:hover {
     background-color: blue;
     color: #fff;
 }
+
+#task-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+#intro {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    color: #000;
+    
+}
+
+   .background {
+    background-color: #f0f0f0;
+
+}
+
   
 @media screen and (min-width: 368px) {
     .footer {

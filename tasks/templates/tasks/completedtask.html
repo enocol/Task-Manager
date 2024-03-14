@@ -3,7 +3,7 @@
     
 
 {% block content %}
-<section class="task-section">
+<section class="task-section background">
     <h1>Completed Tasks</h1>
 
     
@@ -25,6 +25,7 @@
                 <td>{{ task.title }}</td>
                 <td>{% if task.completed%}Completed{% endif %}</td>
                 <td><span><a href="{% url 'updatetask' task.id %}">Update</a> |</span> <span><a href="">Delete</a></span></td>
+                
             </tr>
             {% else %}
             <tr>

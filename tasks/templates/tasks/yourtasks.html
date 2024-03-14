@@ -2,11 +2,16 @@
 {% load static %}
 {% block content%}
 
- <section class="task-section">
-
-     <div >
-        <h1>Your Tasks</h1>
+ <section class="task-section background">
+  <div id="task-count">
+    <div >
+      <h1>Your Tasks</h1>
     </div>
+  </div>
+
+    
+   
+   
 
        <table class="table table-hover">
         <thead>
@@ -16,6 +21,7 @@
             <th scope="col">Details</th>
             <th scope="col">Status</th>
             <th scope="col">Actions</th>
+          
           </tr>
         </thead>
         {% if tasks %}

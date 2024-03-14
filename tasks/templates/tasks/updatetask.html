@@ -5,23 +5,20 @@
 
 
 {% block content %}
+<section class="background">
+    <div class="update-task">
+        <h1>Update Task</h1>
+        
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy}}
+            <div class="controls">
+            <button type="submit">Update</button>
+            <div class="cancel-button"><a href="{% url 'yourtasks'%}">Cancel</a></div>
+            </div>
+        </form>
+        
+        </div>
 
-<div class="update-task">
-<h1>Update Task</h1>
-
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form|crispy}}
-    <div class="controls">
-    <button type="submit">Update</button>
-    <div class="cancel-button"><a href="{% url 'yourtasks'%}">Cancel</a></div>
-    </div>
-</form>
-
-</div>
-
-
-
-
-
+</section>
 {% endblock %}
