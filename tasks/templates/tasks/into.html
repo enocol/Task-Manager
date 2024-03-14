@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content%}
+
+
+<section id="intro" class="background">
+    
+    <div>
+        <div>
+            <h1>Hi {{user}}</h1>
+        </div>
+        
+       <div>
+        <p>You have {{pending}} task pending</p>
+        <p>You have {{completed}} task completed</p>
+       </div>
+        
+    </div>
+</section>
+
+{% endblock %}
