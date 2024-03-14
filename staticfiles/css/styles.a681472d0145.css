@@ -31,14 +31,6 @@ body {
     left: 0;
     
 }
-
-.fa-bars {
-    color: #f0f0f0;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-
 .nav-bar { 
    display: flex;
    align-items: center;
@@ -118,7 +110,7 @@ body {
 
 .login {
     margin: 100px auto;
-    padding: 5px;
+    padding-left: 10px;
 }
 
 
@@ -263,8 +255,4 @@ button:hover {
         width: 50%;
     }
     
-
-    .update-task {
-        width: 50%;
-    }
 }
