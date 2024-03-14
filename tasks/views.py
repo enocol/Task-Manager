@@ -30,9 +30,9 @@ def addtask(request):
 
 def yourtasks(request):
     task = Task.objects.all().order_by('created_on')
-    
+   
     context = {
-        'tasks': task
+        'tasks': task,
     }
 
     return render(request, 'tasks/yourtasks.html', context)
@@ -78,5 +78,19 @@ def completedtask(request):
         'completed_tasks': completed
     }
     return render(request, 'tasks/completedtask.html', context)
+
+
+def into(request):
+    user = request.user
+    usertasks = Task.objects.filter(user=user)
+    completed = usertasks.filter(completed=True).count()
+    pending = usertasks.filter(completed=False).count()
+    context = {
+        'completed': completed,
+        'pending': pending,
+    }
+
+
+    return render(request, 'tasks/into.html', context)
 
 
