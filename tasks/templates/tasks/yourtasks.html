@@ -5,14 +5,9 @@
  <section class="task-section background">
   <div id="task-count">
     <div >
-      <h1>Your Tasks</h1>
+      <h1>Pending Tasks</h1>
     </div>
   </div>
-
-    
-   
-   
-
        <table class="table table-hover">
         <thead>
           <tr>
@@ -34,8 +29,8 @@
               <th scope="row">#</th>
               <td>{{ task.title }}</td>
               <td><a href="{% url 'taskdetails' task.id %}">View</a></td>
-              <td>{% if not task.completed%}Pending{%endif%}</td>
-              <td><span><a href="{% url 'updatetask' task.id %}">Update</a> |</span> <span><a href="">Delete</a></span></td>
+              <td>{% if not task.completed %}Pending{% endif %}</td>
+              <td><span><a href="{% url 'updatetask' task.id %}">Update</a> |</span> <span ><a class="deletebtn" href="{% url 'deletetask' task.id %}" onclick=" return confirm('Are you sure you  want to delete  '+'  {{task.title}}?')">Delete</a></span></td>
             </tr>
             {% endif %}
           {% endif %}

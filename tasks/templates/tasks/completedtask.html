@@ -24,7 +24,7 @@
                 <th scope="row">#</th>
                 <td>{{ task.title }}</td>
                 <td>{% if task.completed%}Completed{% endif %}</td>
-                <td><span><a href="{% url 'updatetask' task.id %}">Update</a> |</span> <span><a href="">Delete</a></span></td>
+                <td><span><a href="{% url 'updatetask' task.id %}">Update</a> |</span> <span><a href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete '+' {{task.title}}?')">Delete</a></span></td>
                 
             </tr>
             {% else %}

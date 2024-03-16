@@ -2,6 +2,7 @@ from .models import Task
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from .form import Addtask, Updatetask
+from django.views.decorators.cache import never_cache
 
 # Create your views here.
 
@@ -92,5 +93,13 @@ def into(request):
 
 
     return render(request, 'tasks/into.html', context)
+
+
+
+def deletetask(request, id):
+    task = Task.objects.get(id=id)
+    task.delete()
+    messages.success(request, 'Task deleted successfully')
+    return redirect('yourtasks')
 
 

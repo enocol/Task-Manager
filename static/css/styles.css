@@ -44,7 +44,6 @@ body {
    align-items: center;
    justify-content: flex-end;
    padding: 5px;
-   
 }
 
 .nav-items {
@@ -54,6 +53,12 @@ body {
     align-items: center;
     padding: 0;
     margin: 0;
+}
+
+.nav-items li a {
+    color: #f0f0f0;
+    text-decoration: dashed;
+    font-weight: bolder;
 }
 
 
@@ -92,6 +97,7 @@ body {
     margin: 100px auto;
     height: auto;
 }
+
 .no-task {
     display: flex;
     justify-content: center;
@@ -222,6 +228,47 @@ button:hover {
 
 #mobile-menu {
     display: none;
+    cursor: pointer;
+    transition: left 0.3s ease;
+}
+
+#delete-container {
+    width: 400px;
+    height: 120px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: none;
+}
+
+#h4 {
+    color: #f0f0f0;
+    margin: 10px;
+    font-size: medium;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#close-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin-right: 5px;
+
 }
 
 
@@ -242,18 +289,28 @@ button:hover {
         flex-direction: column;
     }
 
+    .nav-items li {
+        margin-bottom: 5px;   
+    }
+
+    .nav-items li a {
+        text-decoration: none;
+        color: #f0f0f0;
+        font-weight: bolder;
+    }
+
     .show-hide-menu {
         display: block;
         position: fixed;
-        top: 50px;
+        top: 55px;
         right: 0;
         cursor: pointer;
         background-color: #333;
         width: 100%;
-        height: 30vh;
+        height: 40vh;
         z-index: 100;
         padding-left: 20px;
-        list-style: none;
+        transition: left 0.3s ease;
     }
     
 }
@@ -266,5 +323,13 @@ button:hover {
 
     .update-task {
         width: 50%;
+    }
+
+    .container1 {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
     }
 }
