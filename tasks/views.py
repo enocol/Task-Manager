@@ -30,8 +30,7 @@ def addtask(request):
 
 
 def yourtasks(request):
-    task = Task.objects.all().order_by('created_on')
-   
+    task = Task.objects.all().order_by('created_on')   
     context = {
         'tasks': task,
     }

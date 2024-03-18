@@ -118,12 +118,12 @@ body {
 }
 
 .task-section {
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 
 .login {
-    margin: 100px auto;
+    margin: 60px auto;
     padding: 5px;
 }
 
@@ -134,7 +134,7 @@ body {
     border-radius: 5px;
     border: 1px solid grey;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin: 100px auto;
+    margin: 10px auto;
     height: auto;
 }
 
@@ -169,22 +169,21 @@ body {
     padding: 10px;
     background-color: #fff;
     border-radius: 5px;
-    border: 1px solid blue;
+    border: 1px solid #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     text-decoration: none;
-    color: blue;
+    
 
 }
 
 
 .cancel-button :hover {
-    background-color: blue;
     color: #fff;
 }
 
 .cancel-button a {
     text-decoration: none;
-    color: blue;
+    color: #fff;
 }
 
 

@@ -4,11 +4,13 @@
 
 {% block content %}
 <section class="task-section background">
-    <h1>Completed Tasks</h1>
+    <div class="d-flex justify-content-center">
+        <h1>Completed Tasks</h1>
+    </div>
 
-    
-    <table class="table table-hover">
-        <thead>
+    <div class="table-responsive">
+    <table class="table table-hover caption-top">
+        <thead class="table-dark">
             <tr>
                 <th scope="col">No</th>
                 <th scope="col">Title</th>
@@ -24,7 +26,7 @@
                 <th scope="row">#</th>
                 <td>{{ task.title }}</td>
                 <td>{% if task.completed%}Completed{% endif %}</td>
-                <td><span><a href="{% url 'updatetask' task.id %}">Update</a> |</span> <span><a href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete '+' {{task.title}}?')">Delete</a></span></td>
+                <td><span><a href="{% url 'updatetask' task.id %}">Update</a></span> <span><a href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete '+' {{task.title}}?')">Delete</a></span></td>
                 
             </tr>
             {% else %}
@@ -36,6 +38,7 @@
             {% endfor %}
         </tbody>
     </table>
+    </div>
   
 </section>
 
