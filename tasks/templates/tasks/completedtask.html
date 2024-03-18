@@ -12,7 +12,7 @@
     <table class="table table-hover caption-top">
         <thead class="table-dark">
             <tr>
-                <th scope="col">No</th>
+                
                 <th scope="col">Title</th>
                 <th scope="col">Status</th>
                 <th scope="col">Actions</th>
@@ -23,10 +23,9 @@
             {% if task.user == user %}
             {% if task.completed %}
             <tr>
-                <th scope="row">#</th>
                 <td>{{ task.title }}</td>
                 <td>{% if task.completed%}Completed{% endif %}</td>
-                <td><span><a href="{% url 'updatetask' task.id %}" class="btn btn-warning btn-sm ">Update</a></span> <span><a class="btn btn-danger btn-sm m-2" href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete '+' {{task.title}}?')">Delete</a></span></td>
+                <td><span><a href="{% url 'updatetask' task.id %}" class="btn btn-warning btn-sm btn-1 ">Update</a></span> <span><a class="btn btn-danger btn-sm btn-1" href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete '+' {{task.title}}?')">Delete</a></span></td>
                 
             </tr>
             {% else %}

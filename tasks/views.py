@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from django.contrib import messages
 from .form import Addtask, Updatetask
 from django.views.decorators.cache import never_cache
+from django.views import generic
 
 # Create your views here.
 
@@ -36,6 +37,12 @@ def yourtasks(request):
     }
 
     return render(request, 'tasks/yourtasks.html', context)
+
+class YourTask(generic.ListView):
+    queryset = Task.objects.all().order_by('created_on')
+    template_name = 'tasks/yourtasks.html'
+   
+
 
 
 def updatetask(request, id):

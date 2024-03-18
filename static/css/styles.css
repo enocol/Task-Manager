@@ -109,10 +109,10 @@ body {
     margin-top: 20px;
     left: 0;
 }
-
+/* 
 .task-section {
-    margin-top: 70px;
-}
+    margin: 70px 0;
+} */
 
 
 .login {
@@ -200,7 +200,6 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
 }
 
 #intro {
@@ -268,6 +267,13 @@ button:hover {
     margin-bottom: 50px;
 }
 
+.btn-1 {
+    width: 100%;
+    margin-top: 2px;
+    border: 2px solid #f0f0f0;
+    
+}
+
 
 
   
@@ -315,6 +321,7 @@ button:hover {
 @media screen and (min-width: 768px){
     .addtask {
         width: 50%;
+        margin: 70px auto;
     }
     
 
@@ -328,5 +335,9 @@ button:hover {
         position: absolute;
         top: 50%;
         left: 50%;
+    }
+
+    .btn-1 {
+        width: 40%;
     }
 }

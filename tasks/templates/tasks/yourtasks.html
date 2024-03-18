@@ -12,7 +12,6 @@
        <table class="table table-hover">
         <thead class="table-dark">
           <tr>
-            <th scope="col">No</th>
             <th scope="col">Title</th>
             <th scope="col">Details</th>
             <th scope="col">Status</th>
@@ -23,24 +22,23 @@
        
         <tbody class="table-group-divider">
           
-          {% for task in tasks %}
+          {% for task in task_list %}
           {% if task.user == user and not task.completed  %}
          
             <tr>
-              <th scope="row">#</th>
               <td>{{ task.title }}</td>
               <td><a href="{% url 'taskdetails' task.id %}" class="btn btn-success btn-sm ">View</a></td>
               <td>{% if not task.completed %}Pending{% endif %}</td>
-              <td><span><a href="{% url 'updatetask' task.id %}" class="btn btn-warning btn-sm">Update</a></span> <span ><a class="btn btn-danger btn-sm m-2" href="{% url 'deletetask' task.id %}" onclick=" return confirm('Are you sure you  want to delete  '+'  {{task.title}}?')">Delete</a></span></td>
+              <td><span><a href="{% url 'updatetask' task.id %}" class="btn btn-warning btn-sm btn-1 ">Update</a></span> <span ><a class="btn btn-danger btn-sm btn-1 " href="{% url 'deletetask' task.id %}" onclick=" return confirm('Are you sure you  want to delete  '+'  {{task.title}}?')">Delete</a></span></td>
             </tr>
           {% endif %}
           {% endfor %}
 
         </tbody>      
       </table>
+     
   </div>
-   
-      
+  
  </section>
 
 {% endblock %}
