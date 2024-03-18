@@ -110,9 +110,9 @@ body {
     left: 0;
 }
 
-/* .task-section {
+.task-section {
     margin-top: 70px;
-} */
+}
 
 
 .login {
@@ -312,7 +312,7 @@ button:hover {
     
 }
 
-/* @media screen and (min-width: 768px){
+@media screen and (min-width: 768px){
     .addtask {
         width: 50%;
     }
@@ -329,4 +329,4 @@ button:hover {
         top: 50%;
         left: 50%;
     }
-} */
+}
