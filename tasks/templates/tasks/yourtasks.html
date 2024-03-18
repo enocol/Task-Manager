@@ -20,30 +20,23 @@
           
           </tr>
         </thead>
-        {% if tasks.user == user %}
+       
         <tbody class="table-group-divider">
           
           {% for task in tasks %}
-          {% if task.user == user %}
-          {% if not task.completed %}
+          {% if task.user == user and not task.completed  %}
+         
             <tr>
               <th scope="row">#</th>
               <td>{{ task.title }}</td>
-              <td><a href="{% url 'taskdetails' task.id %}">View</a></td>
+              <td><a href="{% url 'taskdetails' task.id %}" class="btn btn-success btn-sm ">View</a></td>
               <td>{% if not task.completed %}Pending{% endif %}</td>
-              <td><span><a href="{% url 'updatetask' task.id %}">Update</a></span> <span ><a class="deletebtn" href="{% url 'deletetask' task.id %}" onclick=" return confirm('Are you sure you  want to delete  '+'  {{task.title}}?')">Delete</a></span></td>
+              <td><span><a href="{% url 'updatetask' task.id %}" class="btn btn-warning btn-sm">Update</a></span> <span ><a class="btn btn-danger btn-sm" href="{% url 'deletetask' task.id %}" onclick=" return confirm('Are you sure you  want to delete  '+'  {{task.title}}?')">Delete</a></span></td>
             </tr>
-            {% endif %}
           {% endif %}
           {% endfor %}
 
-        </tbody>
-        {% else %}   
-     
-        <tr>
-          <td>You do not have any task</td>
-        </tr>   
-       {% endif %} 
+        </tbody>      
       </table>
   </div>
    

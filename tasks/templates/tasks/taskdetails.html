@@ -5,48 +5,31 @@
 
 {% block content %}
 
-<section class="task-details background">
-    
-    <div >
-        {% if task.completed %}
-            <p>
-                <strong>Status:</strong> Completed
-            </p>
-        {% else %}
-            <p>
-                <strong>Status:</strong> Pending
-            </p>
-        {% endif %}
+<section class="container">
+    <div class="card w-100 h-auto" style="width: 18rem;">
         <h1>Task Details</h1>
-        <p>
-            <strong>Title:</strong> {{ task.title }}
-        </p>
-        <p>
-            <strong>Description:</strong> {{ task.description }}
-        </p>
-        <p>
-            <strong>Due on:</strong> {{ task.due_date }}
-        </p>
-        <p>
-            <strong>Created on:</strong> {{ task.created_on }}
-        </p>
-        <p>
-            <strong>Created by:</strong> {{ task.user }}
-
-        </p>
-        <div>
-        <form action="" method="post">
-            {% csrf_token %}
-             {{completed}}
-            <button type="submit">Update Status</button>
-        </form>
-            
+        <div class="card-body">
+          <h5 class="card-title"> {{ task.title }}</h5>
+          <p class="card-text"><span>My TODO task: </span>{{ task.description }}</p>
         </div>
-
-        <p>
-            <a href="{% url 'yourtasks' %}">Back to your tasks</a>
-        </p>
-    </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><span class="bg-light">Date Started: </span> {{ task.created_on }}</li>
+          <li class="list-group-item"><span class="bg-light">Expected finish Date: </span>{{ task.due_date }}</li>
+          <li class="list-group-item">Task by: {{ task.user }}</li>
+        </ul>
+        <div class="card-body">
+            <form action="" method="post">
+                {% csrf_token %}
+                 {{completed}}
+                <button type="submit" class="btn btn-warning">Update Status</button>
+            </form>
+            <a class="btn btn-success" href="{% url 'yourtasks' %}">Back</a>
+          
+        </div>
+      </div>
+    
 </section>
 
 {% endblock %}
+
+

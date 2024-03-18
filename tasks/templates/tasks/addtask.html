@@ -13,8 +13,8 @@
         {% csrf_token %}
         {{form | crispy}}
        <div class="controls">
-         <button type="submit" class="btn btn-primary">Add Task</button>
-         <div class="cancel-button btn btn-primary"><a href="{% url 'yourtasks'%}">Cancel</a>
+         <button type="submit" class="btn btn-success">Add Task</button>
+         <div class="cancel-button btn btn-success"><a href="{% url 'yourtasks'%}">Cancel</a>
           </div>
        </div>
 

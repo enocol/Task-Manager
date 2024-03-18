@@ -189,9 +189,9 @@ body {
 
 button {
     padding: 10px;
-    background-color: #fff;
-    color: blue;
+    background-color: blue;
     border: 1px solid blue;
+    color: #fff;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -268,6 +268,10 @@ button:hover {
     padding: 5px;
     margin-right: 5px;
 
+}
+
+.container {
+    margin-top: 70px;
 }
 
 
