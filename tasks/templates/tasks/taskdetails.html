@@ -10,12 +10,12 @@
         <h1>Task Details</h1>
         <div class="card-body">
           <h5 class="card-title"> {{ task.title }}</h5>
-          <p class="card-text"><span>My TODO task: </span>{{ task.description }}</p>
+          <p class="card-text"><span class="badge text-bg-dark">Todo task: </span>{{ task.description }}</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><span class="bg-light">Date Started: </span> {{ task.created_on }}</li>
-          <li class="list-group-item"><span class="bg-light">Expected finish Date: </span>{{ task.due_date }}</li>
-          <li class="list-group-item">Task by: {{ task.user }}</li>
+          <li class="list-group-item"><span class="badge text-bg-dark">Date Started: </span> {{ task.created_on }}</li>
+          <li class="list-group-item"><span class="badge text-bg-dark">Expected finish Date: </span>{{ task.due_date }}</li>
+          <li class="list-group-item"><span class="badge text-bg-dark">Task by: </span> {{ task.user }}</li>
         </ul>
         <div class="card-body">
             <form action="" method="post">

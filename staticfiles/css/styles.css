@@ -94,15 +94,8 @@ body {
     border-radius: 5px;
     border: 1px solid grey;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin: 100px auto;
+    margin: 65px auto;
     height: auto;
-}
-
-.no-task {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
 }
 
 .footer {
@@ -117,9 +110,9 @@ body {
     left: 0;
 }
 
-.task-section {
+/* .task-section {
     margin-top: 70px;
-}
+} */
 
 
 .login {
@@ -271,7 +264,8 @@ button:hover {
 }
 
 .container {
-    margin-top: 100px;
+    margin-top: 70px;
+    margin-bottom: 50px;
 }
 
 
@@ -318,7 +312,7 @@ button:hover {
     
 }
 
-@media screen and (min-width: 768px){
+/* @media screen and (min-width: 768px){
     .addtask {
         width: 50%;
     }
@@ -335,4 +329,4 @@ button:hover {
         top: 50%;
         left: 50%;
     }
-}
+} */
