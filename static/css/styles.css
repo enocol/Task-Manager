@@ -165,8 +165,6 @@ body {
     border: 1px solid #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     text-decoration: none;
-    
-
 }
 
 
@@ -209,7 +207,6 @@ button:hover {
     align-items: center;
     height: 90vh;
     color: #000;
-    
 }
 
 .background {
@@ -265,6 +262,7 @@ button:hover {
 .container {
     margin-top: 70px;
     margin-bottom: 50px;
+   
 }
 
 .btn-1 {
@@ -273,6 +271,35 @@ button:hover {
     border: 2px solid #f0f0f0;
     
 }
+
+.c-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.todo-details {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+/* .show-hide-menu {
+    display: block;
+    position: fixed;
+    top: 55px;
+    right: 0;
+    cursor: pointer;
+    background-color: #333;
+    width: 100%;
+    height: 40vh;
+    z-index: 100;
+    padding-left: 20px;
+    transition: left 0.3s ease;
+} */
 
 
 
@@ -340,4 +367,12 @@ button:hover {
     .btn-1 {
         width: 40%;
     }
+
+    .container {
+       max-width: 70px;
+       width: 50px;
+    }
+
+   
+
 }

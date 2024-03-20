@@ -165,8 +165,6 @@ body {
     border: 1px solid #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     text-decoration: none;
-    
-
 }
 
 
@@ -209,7 +207,6 @@ button:hover {
     align-items: center;
     height: 90vh;
     color: #000;
-    
 }
 
 .background {
@@ -265,15 +262,28 @@ button:hover {
 .container {
     margin-top: 70px;
     margin-bottom: 50px;
+   
 }
 
 .btn-1 {
     width: 100%;
-    height: 25px;
     margin-top: 2px;
+    border: 2px solid #f0f0f0;
+    
+}
+
+.c-body {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    
+}
+
+.todo-details {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 
@@ -323,6 +333,7 @@ button:hover {
 @media screen and (min-width: 768px){
     .addtask {
         width: 50%;
+        margin: 70px auto;
     }
     
 
@@ -340,6 +351,13 @@ button:hover {
 
     .btn-1 {
         width: 40%;
-        height: 40px;
     }
+
+    .container {
+       max-width: 70px;
+       width: 50px;
+    }
+
+   
+
 }

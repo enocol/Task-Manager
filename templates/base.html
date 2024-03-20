@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet"  href="{% static 'css/styles.css'%}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <title>Task Manager</title>
@@ -24,11 +24,9 @@
         <nav class="nav-bar ">
             <ul class="nav-items">
                 {% if user.is_authenticated %}
-                <li> <a href="{% url 'into'%}">Home</a></li>
-                
-                <li> <a href="{% url 'completedtask'%}">Completed Task</a></li>
-                
+                <li> <a href="{% url 'into'%}">Home</a></li>                
                 <li> <a href="{% url 'yourtasks'%}">Pending Tasks</a></li>
+                <li> <a href="{% url 'completedtask'%}">Completed Task</a></li>
                 <li><a href="{% url 'addtask'%}">Add Task</a></li>
                 <li><a href="{% url  'account_logout'%}">Logout</a></li>
                 <li>Welcome {{user}}</li>

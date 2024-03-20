@@ -30,13 +30,13 @@ def addtask(request):
     return render(request, 'tasks/addtask.html', context)
 
 
-def yourtasks(request):
-    task = Task.objects.all().order_by('created_on')
-    context = {
-        'tasks': task,
-    }
+# def yourtasks(request):
+#     task = Task.objects.all().order_by('created_on')
+#     context = {
+#         'tasks': task,
+#     }
 
-    return render(request, 'tasks/yourtasks.html', context)
+#     return render(request, 'tasks/yourtasks.html', context)
 
 class YourTask(generic.ListView):
     queryset = Task.objects.all().order_by('created_on')
