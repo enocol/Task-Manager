@@ -4,8 +4,8 @@
 {% block content%}
 
 
-<section class="task-section addtask background">
-    <h1>Add tasks</h1>
+<section class="container w-50 mb-6 pb-4">
+    <h1 class="bg-dark text-white">Add tasks</h1>
     <p>
         Add a new task to your list.
     </p>
@@ -13,8 +13,8 @@
         {% csrf_token %}
         {{form | crispy}}
        <div class="controls">
-         <button type="submit" class="btn btn-success">Add Task</button>
-         <div class="cancel-button btn btn-success"><a href="{% url 'yourtasks'%}">Cancel</a>
+         <button type="submit" class="btn btn-primary">Add Task</button>
+         <div class="btn btn-primary btn-sm"><a href="{% url 'yourtasks'%}"><i class="fa-solid fa-xmark text-white"></i></a>
           </div>
        </div>
 

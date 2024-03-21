@@ -5,20 +5,19 @@
 {% block content %}
 
 
-<section class="login background">
-    <div class="update-task">
-        <h1>Update Task</h1>
-        
+<section class="container w-50 mb-6 pb-5">
+     <h1 class="bg-dark text-white w-100 text-center mx-auto">Edit Task</h1>
+  
         <form action="" method="post">
             {% csrf_token %}
             {{ edittask|crispy}}
             <div class="controls">
-            <button class="btn btn-success" type="submit">Update</button>
-            <div class="btn btn-success"><a href="{% url 'yourtasks'%}">Cancel</a></div>
+            <button class="btn btn-primary btn-sm"  type="submit">Update</button>
+            <div class="btn btn-primary"><a href="{% url 'yourtasks'%}"><i class="fa-solid fa-xmark text-white"></i></a></div>
             </div>
         </form>
         
-        </div>
+  
 </section>
 
 {% endblock %}

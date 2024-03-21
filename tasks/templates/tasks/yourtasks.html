@@ -2,11 +2,9 @@
 {% load static %}
 {% block content%}
 
-<section class="task-section background">
+<section class="container">
+  <h1 class="bg-dark text-white mx-auto">Pending Tasks</h1>
   <div id="task-count">
-    <div>
-      <h1>Pending Tasks</h1>
-    </div>
   </div>
   <div class="table-responsive caption-top">
     <table class="table table-hover">
@@ -30,7 +28,7 @@
               <td>{{ task.title }}</td>
               <td><a href="{% url 'taskdetails' task.id %}" class="btn btn-success btn-sm ">View</a></td>
               <td>{% if not task.completed %}Pending{% endif %}</td>
-              <td>
+              <td class="{% if task.priority == 'Urgent'%}text-danger{%endif%}">
                 {{ task.priority }}
               </td>
             </tr>

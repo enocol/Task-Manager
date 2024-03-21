@@ -57,7 +57,6 @@ body {
 
 .nav-items li a {
     color: #f0f0f0;
-    text-decoration: dashed;
     font-weight: bolder;
 }
 
@@ -74,19 +73,6 @@ body {
 
 }
 
-.page-intro {
-    height: 100px;
-    text-align: center;
-    margin: 100px auto;
-    width: 60%;
-    height: 50vh;
-    background-color: #f0f0f0;
-}
-
-.page-intro p {
-    font-size: 20px;
-    font-weight: 600;
-}
 
 .addtask {
     width: 100%;
@@ -115,14 +101,8 @@ body {
 }
 
 
-.login {
-    margin: 60px auto;
-    padding: 5px;
-}
-
 
 .update-task {
-    width: 100%;
     padding: 20px;
     border-radius: 5px;
     border: 1px solid grey;
@@ -157,62 +137,19 @@ body {
 
 }
 
-.cancel-button {
-    margin: 10px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    text-decoration: none;
-}
 
 
 .cancel-button :hover {
     color: #fff;
 }
 
-.cancel-button a {
-    text-decoration: none;
-    color: #fff;
-}
 
-
-button {
-    padding: 10px;
-    background-color: blue;
-    border: 1px solid blue;
-    color: #fff;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-
-}
 
 button:hover {
     background-color: blue;
     color: #fff;
 }
 
-#task-count {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#intro {
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    color: #000;
-}
-
-.background {
-    background-color: #f0f0f0;
-
-}
 
 #mobile-menu {
     display: none;
@@ -236,20 +173,6 @@ button:hover {
     display: none;
 }
 
-#h4 {
-    color: #f0f0f0;
-    margin: 10px;
-    font-size: medium;
-}
-
-.action-buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
 #close-modal {
     display: flex;
     justify-content: space-between;
@@ -265,19 +188,6 @@ button:hover {
    
 }
 
-.btn-1 {
-    width: 100%;
-    margin-top: 2px;
-    border: 2px solid #f0f0f0;
-    
-}
-
-.c-body {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-}
 
 .todo-details {
     background-color: #fff;
@@ -285,6 +195,7 @@ button:hover {
     padding: 20px;
     margin-top: 20px;
 }
+
 
 
 

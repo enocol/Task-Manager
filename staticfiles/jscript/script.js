@@ -10,9 +10,3 @@ mobileMenu.addEventListener('click', () => {
 })
 
 
-document.addEventListener('click', (e) => {
-  if (e.target !== mobileMenu && e.target !== navLinks) {
-    navBar.classList.remove('show-hide-menu');
-    navLinks.style.display = 'none';
-  }
-})
