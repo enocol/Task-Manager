@@ -26,8 +26,7 @@
             <ul class="nav-items">
                 {% if user.is_authenticated %}
                 <li> <a href="{% url 'into'%}">Home</a></li>                
-                <li> <a href="{% url 'yourtasks'%}">Pending Tasks</a></li>
-                <li> <a href="{% url 'completedtask'%}">Completed Task</a></li>
+                <li> <a href="{% url 'yourtasks'%}">Your Tasks</a></li>
                 <li><a href="{% url 'addtask'%}">Add Task</a></li>
                 <li><a href="{% url  'account_logout'%}">Logout</a></li>
                 <li>Welcome <a href="{% url 'userprofile'%}">{{user}}</a></li>

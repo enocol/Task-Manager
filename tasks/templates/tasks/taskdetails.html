@@ -4,22 +4,21 @@
 
 
 {% block content %}
-<section class="container">
+<section class="container w-100">
     <h1 class="bg-dark text-white">Task Details</h1>
+    <div class="d-flex justify-content-end align-items-center">
+        <a href="{% url 'yourtasks'%}" class="btn btn-primary btn-sm m-2">Back</a>
+    </div>
     <div class="row">
-        <div class="col-md-12">
-           <div class="d-flex justify-content-between align-items-center">
-            <a href="{% url 'yourtasks'%}" class="btn btn-primary btn-sm">Back</a>
-           </div>
-          
-            <div class="card vh-75">
+        <div class="col-md-8">
+            <div class="card ">
                 <div class="card-body">
                     <h5 class="card-title">{{task.title}}</h5>
                     <p class="card-text">{{task.description}}</p>
                     <p class="card-text">Status: {% if task.completed %}Completed{% else %}Pending{% endif %}</p>
                     <p class="card-text">Due Date: {{task.due_date}}</p>
                     <p class="card-text">Created: {{task.created_on}}</p>
-                    <form action="" method="post">
+                    <form action="" method="post" class="w-100">
                         {% csrf_token %}
                         {{completed}}
                         <button type="submit" class="btn btn-success">Update status only</button>
@@ -33,8 +32,8 @@
     <div class="col-6">
           <a href="{% url 'edittask' task.id %}" ><i class="fa-solid fa-pen-to-square fs-1 m-2"></i></a>
      </div>
-     <div class="col-6">
-        <a  href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')"><i class="fa-solid fa-trash fs-1 m-2"></i></a>
+     <div class="col-6 float-right">
+        <a  href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')">{% if task.completed%}<i class="fa-solid fa-trash fs-1 m-2 float-end"></i>{%endif%}</a>
     </div>
     </div>
   

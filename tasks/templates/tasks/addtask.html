@@ -12,9 +12,9 @@
     <form action="{% url 'addtask'%}" method="post">
         {% csrf_token %}
         {{form | crispy}}
-       <div class="controls">
+       <div class="d-flex justify-content-between">
          <button type="submit" class="btn btn-primary">Add Task</button>
-         <div class="btn btn-primary btn-sm"><a href="{% url 'yourtasks'%}"><i class="fa-solid fa-xmark text-white"></i></a>
+         <div class="btn btn-primary btn-sm"><a href="{% url 'yourtasks'%}"><span class="m-2 text-white">Cancel</a>
           </div>
        </div>
 

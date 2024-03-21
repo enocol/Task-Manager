@@ -3,9 +3,8 @@
 {% block content%}
 
 <section class="container">
-  <h1 class="bg-dark text-white mx-auto">Pending Tasks</h1>
-  <div id="task-count">
-  </div>
+  <h1 class="bg-dark text-white mx-auto">Your List ToDo</h1>
+
   <div class="table-responsive caption-top">
     <table class="table table-hover">
       <thead class="table-dark">
@@ -14,6 +13,7 @@
           <th scope="col">Details</th>
           <th scope="col">Status</th>
           <th scope="col">Priority</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody class="table-group-divider">
@@ -23,14 +23,17 @@
           <td colspan="4" class="table-active align-middle text-center" style="height: 300px; font-size: 30px; color: brown;">You do not currently have any task.</td>
         </tr>
         {% else %}
-          {% if task.user == user and not task.completed %}
+          {% if task.user == user%}
             <tr>
               <td>{{ task.title }}</td>
               <td><a href="{% url 'taskdetails' task.id %}" class="btn btn-success btn-sm ">View</a></td>
-              <td>{% if not task.completed %}Pending{% endif %}</td>
-              <td class="{% if task.priority == 'Urgent'%}text-danger{%endif%}">
+              <td class="{%if task.completed%}text-success{%endif%}">{% if task.completed %}Completed{%else%}Pending{% endif %}</td>
+              <td class="{% if task.priority == 'Urgent' and task.completed%}text-danger text-decoration-line-through{%endif%}{% if task.priority == 'High' and task.completed%}text-warning text-decoration-line-through{%endif%}{%if task.priority == 'Normal' and task.completed%}text-decoration-line-through{%endif%}{%if task.priority == 'Low' and task.completed%}text-decoration-line-through{%endif%}">
                 {{ task.priority }}
               </td>
+              <td class="flex-sm-column justify-content-sm-center align-items-sm-center">
+                <a href="{% url 'edittask' task.id %}" class=""><i class="fa-solid fa-pen-to-square fs-2"></i></a>
+                <a href="{% url 'deletetask' task.id %}" class="{% if task.completed%}btn btn-danger{%endif%}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')">{%if task.completed%}<i class="fa-solid fa-trash btn-sm fs-6"></i>{%endif%}</a>
             </tr>
             {% endif %}
           {% endif %}

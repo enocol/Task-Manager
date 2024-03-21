@@ -91,15 +91,6 @@ def taskdetails(request, id):
 
 
 
-def completedtask(request):
-    completed= Task.objects.filter(completed=True)
-    print(completed)
-    context = {
-        'completed_tasks': completed
-    }
-    return render(request, 'tasks/completedtask.html', context)
-
-
 def into(request):
     user = request.user
     usertasks = Task.objects.filter(user=user)
