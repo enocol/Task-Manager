@@ -2,44 +2,46 @@
 {% load static %}
 {% block content%}
 
- <section class="task-section background">
+<section class="task-section background">
   <div id="task-count">
-    <div >
+    <div>
       <h1>Pending Tasks</h1>
     </div>
   </div>
   <div class="table-responsive caption-top">
-       <table class="table table-hover">
-        <thead class="table-dark">
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Details</th>
-            <th scope="col">Status</th>
-            <th scope="col">Actions</th>
-          
-          </tr>
-        </thead>
-       
-        <tbody class="table-group-divider">
-          
-          {% for task in task_list %}
-          {% if task.user == user and not task.completed  %}
-         
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Details</th>
+          <th scope="col">Status</th>
+          <th scope="col">Priority</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        {% for task in tasks %}
+        {% if forloop.last and task.user != user %}
+        <tr>
+          <td colspan="4" class="table-active align-middle text-center" style="height: 300px; font-size: 30px; color: brown;">You do not currently have any task.</td>
+        </tr>
+        {% else %}
+          {% if task.user == user and not task.completed %}
             <tr>
               <td>{{ task.title }}</td>
               <td><a href="{% url 'taskdetails' task.id %}" class="btn btn-success btn-sm ">View</a></td>
               <td>{% if not task.completed %}Pending{% endif %}</td>
-              <td><span><a href="{% url 'updatetask' task.id %}" class="btn btn-warning btn-sm btn-1 ">Update</a></span> <span ><a class="btn btn-danger btn-sm btn-1 " href="{% url 'deletetask' task.id %}" onclick=" return confirm('Are you sure you  want to delete  '+'  {{task.title}}?')">Delete</a></span></td>
+              <td>
+                {{ task.priority }}
+              </td>
             </tr>
+            {% endif %}
           {% endif %}
-          {% endfor %}
-
-        </tbody>      
-      </table>
-     
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
-  
- </section>
+</section>
+
 
 {% endblock %}
 

@@ -20,17 +20,18 @@
         </thead>
         <tbody>
             {% for task in completed_tasks %}
-            {% if task.user == user %}
-            {% if task.completed %}
+            {% if forloop.last and not task.completed %}
+            <tr>
+                <td colspan="4" class="table-active align-middle text-center" style="height: 300px; font-size: 30px; color: brown;">You do not currently have any completed task.</td>
+            </tr>
+            {% else %}
+            {% if task.user == user and task.completed %}
+           
             <tr>
                 <td>{{ task.title }}</td>
                 <td>{% if task.completed%}Completed{% endif %}</td>
-                <td><span><a href="{% url 'updatetask' task.id %}" class="btn btn-warning btn-sm btn-1 ">Update</a></span> <span><a class="btn btn-danger btn-sm btn-1" href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete '+' {{task.title}}?')">Delete</a></span></td>
+                <td><span><a href="{% url 'edittask' task.id %}" class="btn btn-warning btn-sm btn-1 ">Update</a></span> <span><a class="btn btn-danger btn-sm btn-1" href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete '+' {{task.title}}?')">Delete</a></span></td>
                 
-            </tr>
-            {% else %}
-            <tr>
-                <td>You do not have any completed task</td>
             </tr>
             {% endif %}
             {% endif %}

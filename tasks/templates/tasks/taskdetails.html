@@ -19,16 +19,22 @@
                     <p class="card-text">Status: {% if task.completed %}Completed{% else %}Pending{% endif %}</p>
                     <p class="card-text">Due Date: {{task.due_date}}</p>
                     <p class="card-text">Created: {{task.created_on}}</p>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{completed}}
+                        <button type="submit" class="btn btn-success">Update status only</button>
+                    </form>
+                   
                   </div>
               </div>
          </div>              
     </div>
     <div class="row">
     <div class="col-6">
-          <a href="{% url 'updatetask' task.id %}" class="btn btn-primary w-50 m-2">Edit</a>
+          <a href="{% url 'edittask' task.id %}" class="btn btn-primary w-50 m-2">Edit</a>
      </div>
      <div class="col-6">
-      <a href="{% url 'deletetask' task.id %}" class="btn btn-primary float-end w-50 m-2">Delete</a>
+        <a class="btn btn-danger w-50 m-2 float-end" href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')">Delete</a>
     </div>
     </div>
   
