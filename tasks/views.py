@@ -1,9 +1,9 @@
 from .models import Task
 from django.shortcuts import redirect, render
 from django.contrib import messages
-from .form import Addtask, Updatetask
-from django.views.decorators.cache import never_cache
-from django.views import generic
+from django.contrib.auth import authenticate 
+from .form import Addtask, RegisterUser, Updatetask, EditTask
+from django.contrib.auth import login
 
 # Create your views here.
 
@@ -30,17 +30,29 @@ def addtask(request):
     return render(request, 'tasks/addtask.html', context)
 
 
-# def yourtasks(request):
-#     task = Task.objects.all().order_by('created_on')
-#     context = {
-#         'tasks': task,
-#     }
+def yourtasks(request):
+    task = Task.objects.all().order_by('created_on')
+    context = {
+        'tasks': task,
 
-#     return render(request, 'tasks/yourtasks.html', context)
+    }
 
-class YourTask(generic.ListView):
-    queryset = Task.objects.all().order_by('created_on')
-    template_name = 'tasks/yourtasks.html'
+    return render(request, 'tasks/yourtasks.html', context)
+
+def edit_task(request, id):
+    task = Task.objects.get(id=id)
+    edit_task = EditTask(instance=task)
+    context = {
+        'edittask': edit_task
+    }
+
+    if request.method == 'POST':
+        form = EditTask(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Task updated successfully')
+            return redirect('yourtasks')
+    return render(request, 'tasks/edit_task.html', context)
    
 
 
@@ -81,6 +93,7 @@ def taskdetails(request, id):
 
 def completedtask(request):
     completed= Task.objects.filter(completed=True)
+    print(completed)
     context = {
         'completed_tasks': completed
     }
@@ -105,7 +118,38 @@ def into(request):
 def deletetask(request, id):
     task = Task.objects.get(id=id)
     task.delete()
-    messages.success(request, 'Task deleted successfully')
     return redirect('yourtasks')
+
+def user_profile(request):
+    user = request.user
+    usertasks = Task.objects.filter(user=user)
+    completed = usertasks.filter(completed=True).count()
+    pending = usertasks.filter(completed=False).count()
+    context = {
+        'completed': completed,
+        'pending': pending,
+    }
+    return render(request, 'tasks/user_profile.html', context)
+
+
+def register_user(request):
+    register_form = RegisterUser()
+    context = {
+        'register': register_form
+    }
+
+    if request.method == 'POST':
+        form = RegisterUser(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)  # Use the authenticate function
+            login(request, user)
+            messages.success(request, 'User registered successfully')
+            return redirect('account_login')
+    else:
+        form = RegisterUser()
+    return render(request, 'tasks/register_users.html', context)
 
 
