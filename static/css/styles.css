@@ -178,7 +178,7 @@ body {
 }
 
 
-button {
+/* button {
     padding: 10px;
     background-color: blue;
     border: 1px solid blue;
@@ -187,7 +187,7 @@ button {
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
-}
+} */
 
 button:hover {
     background-color: blue;
