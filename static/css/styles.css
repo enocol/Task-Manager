@@ -1,6 +1,7 @@
 * {
-    list-style: none;
+    font-family: 'Lato', sans-serif;
     text-decoration: none;
+    list-style: none;
 }
 
 
@@ -48,6 +49,8 @@
 .nav-items li a {
     color: #f0f0f0;
     font-weight: bolder;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 
@@ -60,7 +63,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
     left: 0;
 }
 
@@ -83,7 +86,7 @@
 
 .container {
     margin-top: 70px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
    
 }
 
@@ -127,18 +130,4 @@
         transition: left 0.3s ease;
     }
     
-}
-
-@media screen and (min-width: 768px){
-    .addtask {
-        width: 50%;
-        margin: 70px auto;
-    }
-
-    .container {
-       width: 50px;
-    }
-
-   
-
 }

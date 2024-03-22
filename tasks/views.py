@@ -111,7 +111,9 @@ def into(request):
 def deletetask(request, id):
     task = Task.objects.get(id=id)
     task.delete()
+    messages.success(request, 'Task deleted successfully')
     return redirect('yourtasks')
+
 
 def user_profile(request):
     user = request.user

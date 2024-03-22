@@ -4,6 +4,14 @@
 
 <section class="container">
   <h1 class="bg-dark text-white mx-auto">Your List ToDo</h1>
+  {% if messages %}
+  <div class="alert alert-info alert-dismissible fade show" role="alert">
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endif %}
 
   <div class="table-responsive caption-top">
     <table class="table table-hover">
