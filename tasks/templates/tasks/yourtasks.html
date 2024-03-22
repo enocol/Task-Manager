@@ -20,7 +20,7 @@
         {% for task in tasks %}
         {% if forloop.last and task.user != user %}
         <tr>
-          <td colspan="4" class="table-active align-middle text-center" style="height: 300px; font-size: 30px; color: brown;">You do not currently have any task.</td>
+          <td colspan="5" class="table-active align-middle text-center" style="height: 300px; font-size: 30px; color: brown;">You do not currently have any task.</td>
         </tr>
         {% else %}
           {% if task.user == user%}
@@ -31,9 +31,9 @@
               <td class="{% if task.priority == 'Urgent' and task.completed%}text-danger text-decoration-line-through{%endif%}{% if task.priority == 'High' and task.completed%}text-warning text-decoration-line-through{%endif%}{%if task.priority == 'Normal' and task.completed%}text-decoration-line-through{%endif%}{%if task.priority == 'Low' and task.completed%}text-decoration-line-through{%endif%}">
                 {{ task.priority }}
               </td>
-              <td class="flex-sm-column justify-content-sm-center align-items-sm-center">
-                <a href="{% url 'edittask' task.id %}" class=""><i class="fa-solid fa-pen-to-square fs-2"></i></a>
-                <a href="{% url 'deletetask' task.id %}" class="{% if task.completed%}btn btn-danger{%endif%}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')">{%if task.completed%}<i class="fa-solid fa-trash btn-sm fs-6"></i>{%endif%}</a>
+              <td class="d-flex align-items-center justify-content-evenly" >
+                <a href="{% url 'edittask' task.id %}" class="fs-1"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a href="{% url 'deletetask' task.id %}" class="{% if task.completed%}btn btn-danger{%endif%}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')">{%if task.completed%}<i class="fa-solid fa-trash "></i>{%endif%}</a>
             </tr>
             {% endif %}
           {% endif %}
