@@ -89,6 +89,9 @@
     margin-bottom: 60px;
    
 }
+.hero {
+    border-radius: 10px;
+}
 
 
 @media screen and (max-width: 768px) {
@@ -129,8 +132,14 @@
         padding-left: 20px;
         transition: left 0.3s ease;
     } 
+
+    .container {
+        flex-direction: column;
+       
+        align-items: start;
+        width: 100%;
+        gap: 50px;
+     }
 }
 
-@media screen and (min-width: 769px) {
-   
-}
+
