@@ -9,35 +9,35 @@
     <table class="table table-hover">
       <thead class="table-dark">
         <tr>
-          <th scope="col">Title</th>
-          <th scope="col">Details</th>
-          <th scope="col">Status</th>
-          <th scope="col">Priority</th>
-          <th scope="col">Action</th>
+          <th scope="col" >Title</th>
+          <th scope="col" >Details</th>
+          <th scope="col" >Status</th>
+          <th scope="col" >Priority</th>
+          <th scope="col" class="text-center">Action</th>
         </tr>
       </thead>
       <tbody class="table-group-divider">
-        {% for task in tasks %}
-        {% if forloop.last and task.user != user %}
+        {% if tasks.count == 0 %}
         <tr>
           <td colspan="5" class="table-active align-middle text-center" style="height: 300px; font-size: 30px; color: brown;">You do not currently have any task.</td>
         </tr>
         {% else %}
-          {% if task.user == user%}
+        {% for task in tasks %}
             <tr>
               <td>{{ task.title }}</td>
               <td><a href="{% url 'taskdetails' task.id %}" class="btn btn-success btn-sm ">View</a></td>
               <td class="{%if task.completed%}text-success{%endif%}">{% if task.completed %}Completed{%else%}Pending{% endif %}</td>
-              <td class="{% if task.priority == 'Urgent' and task.completed%}text-danger text-decoration-line-through{%endif%}{% if task.priority == 'High' and task.completed%}text-warning text-decoration-line-through{%endif%}{%if task.priority == 'Normal' and task.completed%}text-decoration-line-through{%endif%}{%if task.priority == 'Low' and task.completed%}text-decoration-line-through{%endif%}">
+
+              <td class="{% if task.priority == 'Urgent'%}text-danger{%endif%}{% if task.priority == 'High'%}text-warning {%endif%} {%if task.completed%}text-decoration-line-through{%endif%}">
                 {{ task.priority }}
               </td>
               <td class="d-flex align-items-center justify-content-evenly" >
-                <a href="{% url 'edittask' task.id %}" class="fs-1"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a href="{% url 'deletetask' task.id %}" class="{% if task.completed%}btn btn-danger{%endif%}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')">{%if task.completed%}<i class="fa-solid fa-trash "></i>{%endif%}</a>
+                <a href="{% url 'edittask' task.id %}" class="fs-3 mx-2"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a href="{% url 'deletetask' task.id %}" class="fs-3{% if task.completed%}btn btn-danger{%endif%}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')">{%if task.completed%}<i class="fa-solid fa-trash "></i>{%endif%}</a>
             </tr>
-            {% endif %}
-          {% endif %}
+
         {% endfor %}
+        {% endif %}
       </tbody>
     </table>
   </div>

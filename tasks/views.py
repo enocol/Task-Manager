@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth import authenticate 
 from .form import Addtask, RegisterUser, Updatetask, EditTask
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 
 # Create your views here.
@@ -29,9 +30,10 @@ def addtask(request):
         form = Addtask()
     return render(request, 'tasks/addtask.html', context)
 
-
+@login_required
 def yourtasks(request):
-    task = Task.objects.all().order_by('created_on')
+    user = request.user 
+    task = Task.objects.filter(user = user).order_by('created_on')
     context = {
         'tasks': task,
 
