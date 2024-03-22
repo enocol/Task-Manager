@@ -21,7 +21,7 @@
 <body class="bg-primary-subtle">
 
     <header class="header">
-        <h1>Task <span class="text-danger">Manager</span></h1>
+        <h1>Task <span class="text-warning">Manager</span></h1>
         <div id="mobile-menu">
             <i class="fa-solid fa-bars"></i>
         </div>
@@ -32,7 +32,7 @@
                 <li> <a class="text-white"  href="{% url 'yourtasks'%}">Your Tasks</a></li>
                 <li><a class="text-white" href="{% url 'addtask'%}">Add Task</a></li>
                 <li><a class="text-white" href="{% url  'account_logout'%}">Logout</a></li>
-                <li><a href="{% url 'userprofile'%}"><span class="fs-5 ">Profile</span></a></li>
+                <li><a href="{% url 'userprofile'%}"><span class="fs-5 text-warning ">Profile</span></a></li>
                 {% else %}
                 <li><a href="{% url 'home'%}">Home</a></li>
                 <li><a href="{% url 'account_login'%}">Login</a></li>

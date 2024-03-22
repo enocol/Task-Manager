@@ -6,14 +6,12 @@
 <section class="container">
     
     <div>
-        <div>
-            <h1>Hi {{user}}</h1>
-        </div>
-        
-       <div>
-        <p>You have {{pending}} task pending</p>
-        <p>You have {{completed}} task completed</p>
-       </div>
+       
+            <h1>Hi {{ user.first_name|title }}</h1>
+            <p>Welcome to your task manager</p>
+            <p>Click on the button below to get started</p>
+            <a href="{% url 'yourtasks' %}" class="btn btn-primary">Get Started</a>
+            
         
     </div>
 </section>

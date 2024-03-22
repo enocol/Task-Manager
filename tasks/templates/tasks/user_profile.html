@@ -10,13 +10,37 @@
             <div class="card vh-75">
                 <div class="card-body">
                     <h5 class="card-title">User Details</h5>
-                    <p class="card-text">Username: {{user.username}}</p>
-                    <p class="card-text">Email: {{user.email}}</p>
-                    <p class="card-text">First Name: {{user.first_name}}</p>
-                    <p class="card-text">Last Name: {{user.last_name}}</p>
-                    <p class="card-text">Date Joined: {{user.date_joined}}</p>
-                    <p class="card-text">Completed Task: {{completed}}</p>
-                    <p class="card-text">Pending task: {{pending}}</p>
+                    <table>
+                        <tr>
+                            <td>Username:</td>
+                            <td class="float-end">{{user.username}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td class="float-end">{{user.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>First Name:</td>
+                            <td class="float-end">{{user.first_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Last Name:</td>
+                            <td class="float-end">{{user.last_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>Joined:</td>
+                            <td class="float-end">{{user.date_joined}}</td>
+                        </tr>
+                        <tr>
+                            <td>Pending Task:</td>
+                            <td class="float-end">{{pending}}</td>
+                        </tr>
+                        <tr>
+                            <td>Completed Tasks:</td>
+                            <td class="float-end">{{completed}}</td>
+                        </tr>
+                    </table>
+                    
                 </div>
             </div>
         </div>

@@ -27,6 +27,18 @@ class Updatetask(forms.ModelForm):
     class Meta():
         model = Task
         fields = ['completed']
+        widgets = {
+            'completed': forms.CheckboxInput(attrs={'class': 'form-check-input m-2',
+                                                     'type': 'checkbox', 
+                                                    'id':'completed',
+                                                    'label': 'Mark as completed',
+                                                    'required': False,
+                                                    'for': 'completed',
+                                                    'name': 'completed'
+                                                    })
+        }
+
+
 
 class RegisterUser(UserCreationForm):
     first_name = forms.CharField(max_length=100)
