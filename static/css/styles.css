@@ -4,7 +4,6 @@
     list-style: none;
 }
 
-
 .header {
     background-color: #333;
     display: flex;
@@ -20,7 +19,6 @@
     z-index: 100;
     top: 0;
     left: 0;
-    
 }
 
 .fa-bars {
@@ -28,7 +26,6 @@
     font-size: 30px;
     cursor: pointer;
 }
-
 
 .nav-bar { 
    display: flex;
@@ -53,8 +50,6 @@
     text-decoration: none;
 }
 
-
-
 .footer {
     background-color: #333;
     color: #f0f0f0;
@@ -67,13 +62,11 @@
     left: 0;
 }
 
-
 #mobile-menu {
     display: none;
     cursor: pointer;
     transition: left 0.3s ease;
 }
-
 
 #close-modal {
     display: flex;
@@ -81,18 +74,16 @@
     align-items: center;
     padding: 5px;
     margin-right: 5px;
-
 }
 
 .container {
     margin-top: 70px;
     margin-bottom: 60px;
-   
 }
+
 .hero {
     border-radius: 10px;
 }
-
 
 @media screen and (max-width: 768px) {
     .nav-bar{
@@ -104,6 +95,7 @@
         position: fixed;
         top: 10px;
         right: 0;
+        cursor: pointer;
         margin: 10px;
         cursor: pointer;
         flex-direction: column;
@@ -123,7 +115,7 @@
         display: block;
         position: fixed;
         top: 55px;
-        right: 0;
+        left: 0;
         cursor: pointer;
         background-color: #333;
         width: 100%;
@@ -131,15 +123,29 @@
         z-index: 100;
         padding-left: 20px;
         transition: left 0.3s ease;
+
+        transition: left 0.5s ease; /* Apply transition effect */
+        animation: slideInMenu 0.5s ease; /* Apply animation effect */
+        animation-fill-mode: forwards; /* Maintain the final state of the animation */
     } 
 
     .container {
         flex-direction: column;
-       
         align-items: start;
         width: 100%;
         gap: 50px;
      }
+
+
+
+    @keyframes slideInMenu {
+        from {
+            left: -100%;
+        }
+        to {
+            left: 0;
+        }
 }
 
 
+}
