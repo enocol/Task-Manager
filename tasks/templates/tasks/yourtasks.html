@@ -3,7 +3,7 @@
 {% block content%}
 
 <section class="container">
-  <h1 class="bg-dark text-white mx-auto">Your List ToDo</h1>
+  <h1 class="bg-dark text-white mx-auto text-center">Your tasks</h1>
   {% if messages %}
   <div class="alert alert-info alert-dismissible fade show" role="alert">
     {% for message in messages %}
@@ -14,7 +14,7 @@
   {% endif %}
 
   <div class="table-responsive caption-top">
-    <table class="table table-primary table-striped-columns">
+    <table class="table table-primary table-striped-columns table-borderless">
       <thead class="table-dark">
         <tr>
           <th scope="col" >Title</th>
@@ -35,7 +35,6 @@
               <td>{{ task.title }}</td>
               <td><a href="{% url 'taskdetails' task.id %}" class="btn btn-success btn-sm ">View</a></td>
               <td class="{%if task.completed%}text-success{%endif%}">{% if task.completed %}Completed{%else%}Pending{% endif %}</td>
-
               <td class="{% if task.priority == 'Urgent'%}text-danger{%endif%}{% if task.priority == 'High'%}text-warning {%endif%} {%if task.completed%}text-decoration-line-through{%endif%}">
                 {{ task.priority }}
               </td>
@@ -43,7 +42,6 @@
                 <a href="{% url 'edittask' task.id %}" class="fs-3 mx-2"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a href="{% url 'deletetask' task.id %}" class="fs-3{% if task.completed%}btn btn-danger{%endif%}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')">{%if task.completed%}<i class="fa-solid fa-trash "></i>{%endif%}</a>
             </tr>
-
         {% endfor %}
         {% endif %}
       </tbody>

@@ -4,24 +4,19 @@
 
 
 <section class="container d-flex justify-content-center align-items-center">
-    
     <div class="container d-flex justify-content-between align-items-center hero-container">
-       
            <div >
             <h1>Hi {% if user.first_name %}{{user.first_name | title}}{%else%}{{user.username | title}}{%endif%}</h1>
             <p>Welcome to your task manager</p>
             <p>Here you can create, edit and delete tasks</p>
-            <p>Pending Task <span>{{pending}}</span></p>
-            <p>Completed task <span>{{completed}}</span></p>
+            <p>Pending Task <span class="badge text-bg-warning ms-3">{{pending}}</span></p>
+            <p>Completed task <span class="badge text-bg-success ms-3">{{completed}}</span></p>
             <p>Click on the button below to get started</p>
             <a href="{% url 'yourtasks' %}" class="btn btn-primary">Get Started</a>
            </div>
-
            <div>
             <img src="{% static 'images/hero.jpg'%}" class="hero" alt="man working on a computer">
            </div>
-            
-        
     </div>
 </section>
 
