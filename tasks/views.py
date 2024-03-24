@@ -32,7 +32,7 @@ def addtask(request):
 
 @login_required
 def yourtasks(request):
-    user = request.user 
+    user = request.user.id
     task = Task.objects.filter(user = user).order_by('created_on')
     context = {
         'tasks': task,
@@ -94,7 +94,7 @@ def taskdetails(request, id):
 
 
 def into(request):
-    user = request.user
+    user = request.user.id
     usertasks = Task.objects.filter(user=user)
     completed = usertasks.filter(completed=True).count()
     pending = usertasks.filter(completed=False).count()
@@ -117,7 +117,7 @@ def deletetask(request, id):
 
 
 def user_profile(request):
-    user = request.user
+    user = request.user.id
     usertasks = Task.objects.filter(user=user)
     completed = usertasks.filter(completed=True).count()
     pending = usertasks.filter(completed=False).count()
