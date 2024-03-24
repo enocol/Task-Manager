@@ -98,6 +98,7 @@ def into(request):
     usertasks = Task.objects.filter(user=user)
     completed = usertasks.filter(completed=True).count()
     pending = usertasks.filter(completed=False).count()
+    messages.success(request, '')
     context = {
         'completed': completed,
         'pending': pending,

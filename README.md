@@ -1,110 +1,185 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align='center'> Task Manager </h1>
 
-Welcome USER_NAME,
+View live project here: 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Welcome to Task Manager,the app you can rely on the manage you daily task and schedules. Create and account and sign in a start creating your tasks and 
 
-## Gitpod Reminders
+<div style="text-align:center">
+<img src="static/images/collegemarket.PNG" alt="Task manager">
+</div>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+## Index
+* [User Experience](#user-experience-ux)
+* [Features](#features)
+* [Design](#design)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Future Features](#future-features)
+* [Credits](#credits)
 
-A blue button should appear to click: _Make Public_,
+## User Experience (UX)
+As a user, I want to:
+- Access the Task Manager website seamlessly across various devices including desktops, laptops, tablets, and mobile phones.
+- See the navigation bar contain clear and descriptive menu items that represent different actions that may be performed my on my page.
+- Experience a consistent layout and design across all pages of the website, including the navigation bar's position, styling, and behavior.
+- View a list of Task I have created and their status as completed or pending
+- Click on a Task to view its detailed information including title, description, Date Due, status, Edit buttons and delete buttons
+- Create a new Task by providing details such as title, description, status and Date due an priority of the task.
+- Modify existing Task to update information such as title, description, date due its status and priority.
+- Mark task as completed when done
+- Be able to remove only task that are marked as complete
 
-Another blue button should appear to click: _Open Browser_.
+## Features
+__Sign in / registration :__
+Sign in for already registered users and Registration for new users
+- .
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+ __Navigation Bar :__
+- Logo Integration for easy identification.
+- Home: Directs users to the home page to introduce the user to app.
+- User Registration and Sign-In Page: Allows users to create an account or sign in if already registered.
+<div style="text-align:center">
+<img src="static/images/navbar.PNG" alt="navbar">
+</div>
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+__Task listings :__
+- Comprehensive details Title, a view button, status and priority.
+- Functional buttons (edit, delete) empowering users to manage Task according to their needs. The delete button only shows up for task that have been completed
+<div style="text-align:center">
+<img src="static/images/curd.PNG" alt="curd">
+</div>
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+__Alert messages :__
+- Alert message will pop up to confirm if the user signed in or out . Also when a task is added, edited or delete.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
 
-------
+__Footer :__
+- The footer include recognizable icons or logos representing popular social media platforms such as Facebook, Twitter and Instagram.
+<div style="text-align:center">
+<img src="static/images/footer.PNG" alt="footer">
+</div>
 
-## Release History
+__LogIn :__
+- The login page has 2 clear options, username and password.
+- If the username and password are not correct this error will show.
+<div style="text-align:center">
+<img src="static/images/signin.PNG" alt="signin">
+</div>
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+__Register :__
+- It offers them space for a First Name, Last Name, username, email(optional), password and then rechecks the password to ensure it matches and there were no errors.
+<div style="text-align:center">
+<img src="static/images/signup.PNG" alt="signup">
+</div>
 
-**September 20 2023:** Update Python version to 3.9.17.
+__Add Item :__
+- It asks to complete fields like : Title, Description, Date due and priority
+<div style="text-align:center">
+<img src="static/images/additem.PNG" alt="additem">
+</div>
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## Design
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Balsamiq wireframe
+Balsamiq was used to create a low-fidelity wireframe for design purposes.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+<div style="display: flex;">
+    <img src="static/images/home.png" alt="Home Page" style="width: 50%;">
+    <img src="static/images/item.png" alt="Item Page" style="width: 50%;">
+</div>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+### Models
+Django  AllAuth User Model  was used and a custom add item model was created.
+<div style="text-align:center">
+<img src="static/images/models.PNG" alt="models">
+</div>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### Fonts
+'Lato (google font)' is used for its combination of readability, professionalism, and widespread availability.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Color Scheme
+Colors ( white and black and skiy blue ) are chosen for a clean and simple website design that keeps the focus on the content.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Technologies Used
+- __Languages__
+  - HTML5
+  - CSS3
+  - Python/Django
+  - ElephantSQL Postgres Database
+  
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- __Libraries & Programs Used__
+  - GitHub: used for creating and maintaining the project repository.
+  - Visual Studio code for development
+  - GitHub Projects: used for implementing, monitoring project progress and managing tasks efficiently.
+  - Balsamiq: utilised for crafting wireframes to visualise project layouts.
+  - Bootstrap and Customisation: leveraged for developing visually appealing and responsive websites, tailored to project requirements.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Testing
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Manual Testing
+| **TEST** | **ACTION** | **EXPECTATION** | **RESULT** | 
+|----------|------------|-----------------|------------|
+| Navbar Home Link | Navigation link | When click on it goes to the home page |Worked as expected |
+| Navbar About Link | Navigation link | When click on it goes to the about page |Worked as expected |
+| Navbar  Register Link | Navigation link | Get taken to register page |Worked as expected |
+| Navbar  Sign In Link | Navigation link | Get taken to sign in page |Worked as expected |
+| Navbar  Sign Out Link | Navigation link | Get taken to sign out page |Worked as expected |
+| Navbar  Add Item Link | Navigation link | Get taken to add item page |Worked as expected |
+| Sign Up Button | Clicked button | Form is submitted and go to home page | Worked as expecte |
+| Sign in Button | Clicked button | Request is submitted and go to home page | Worked as expecte |
+| Sign out Button | Clicked button | Request is submitted and go to home page | Worked as expecte |
+| Tasks | Show task title, a view botton when clicked goes to the task details page | Worked as expected | 
+| Add task | Clicked button | Submit task add form | Work as expected |
+| Edit Button | Clicked button | Edit a task | Work as expected |
+| Delete Button | Clicked button | Deletes tasks marked as completed | Work as expected |
+| Back to home Button | Clicked button | Go back to home page | Work as expected |
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Deployment
+To deploy this page to Heroku from its repository, the following steps were taken:
 
-------
+- Create a new repository using the ci template.
+- use fork and branch to be able of the 4 of us to work on it
+- Copy the repo URL and copy it into gitpod to create a new workspace
+- Install Django - add to requirements file
+- Create Procfile and add guricorn
+- Log in to Heroku
+- Click 'New' - 'Create new app'
+- Enter a name for the application and select the region
+- Click 'Create App'
+- Go to Settings and connect to GitHub - choose the correct repository
+- Click 'Reveal config vars' and add DATABASE_URL as the key and the database URL as the value
+- Go to Deploy and scroll down, click on 'Deploy Branch' to manually deploy
+- Once the app has deployed, click 'Open App' at the top of the page
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+## Future Features
+Features which could be implemented in the future:
+- __Send reminder messages :__
+  - Introduce a messaging systems that sends reminder messages to users
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+- __Search Bar :__
+  - Implement a search bar functionality to enable users to  search for specific task.
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- __Feedback :__
+  - Survey or form to allow users to send feedback to us about bugs or future improvements we can implement in later iterations.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Credit
+- Code Institute LMS.
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
 
-**Can I opt out?**
+### Author 
+- [Enoh Collons](https://github.com/enocol)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
