@@ -3,7 +3,7 @@
 {% block content%}
 
 <section class="container">
-  <h1 class="bg-dark text-white mx-auto text-center">Your tasks</h1>
+  <h1 class="bg-dark text-white mx-auto text-center p-3">Your tasks</h1>
   {% if messages %}
   <div class="alert alert-info alert-dismissible fade show" role="alert">
     {% for message in messages %}
@@ -13,9 +13,9 @@
   </div>
   {% endif %}
 
-  <div class="table-responsive caption-top">
+  <div class="table-responsive">
     <table class="table table-primary table-striped-columns table-borderless">
-      <thead class="table-dark">
+      <thead class="table-light">
         <tr>
           <th scope="col" >Title</th>
           <th scope="col" >Details</th>

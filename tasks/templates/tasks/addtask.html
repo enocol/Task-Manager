@@ -4,20 +4,24 @@
 {% block content%}
 
 
-<section class="container mb-6 pb-4">
-    <h1 class="bg-dark text-white text-center">Add tasks</h1>
-    <p>
-        Add a new task to your list.
-    </p>
-    <form action="{% url 'addtask'%}" method="post">
-        {% csrf_token %}
-        {{form | crispy}}
-       <div class="d-flex justify-content-between">
-         <button type="submit" class="btn btn-primary">Add Task</button>
-         <div class="btn btn-primary btn-sm"><a href="{% url 'yourtasks'%}"><span class="m-2 text-white">Cancel</a>
-          </div>
-       </div>
-    </form>
+<section class="container">
+   <div class="row">
+    <div class="col-sm-12">
+        <h1 class="bg-dark text-white text-center p-3">Add tasks</h1>
+        <p>
+            Add a new task to your list.
+        </p>
+        <form action="{% url 'addtask'%}" method="post">
+            {% csrf_token %}
+            {{form | crispy}}
+           <div class="d-flex justify-content-between">
+             <button type="submit" class="btn btn-primary">Add Task</button>
+             <div class="btn btn-primary btn-sm"><a href="{% url 'yourtasks'%}"><span class="m-2 text-white">Cancel</a>
+              </div>
+           </div>
+        </form>
+    </div>
+   </div>
 </section>
 
 {% endblock %}
