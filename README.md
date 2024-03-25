@@ -90,9 +90,9 @@ Balsamiq was used to create a low-fidelity wireframe for design purposes.
     
 </div>
 
-### ERD
+### ERD/model
 <div style="text-align:center">
-<img src="static/images/ERD.PNG" alt="models">
+<img src="static/images/erd.jpg" alt="models">
 </div>
 
 
