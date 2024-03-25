@@ -60,12 +60,6 @@ __Alert messages :__
 - Alert message will pop up to confirm if the user signed in or out . Also when a task is added, edited or delete.
 
 
-__Footer :__
-- The footer include recognizable icons or logos representing popular social media platforms such as Facebook, Twitter and Instagram.
-<div style="text-align:center">
-<img src="static/images/footer.PNG" alt="footer">
-</div>
-
 __LogIn :__
 - The login page has 2 clear options, username and password.
 - If the username and password are not correct this error will show.
