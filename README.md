@@ -1,12 +1,13 @@
 <h1 align='center'> Task Manager </h1>
 
 View live project here: 
+https://tasks-manager-6fbb1e24947a.herokuapp.com/
 
 
 Welcome to Task Manager,the app you can rely on the manage you daily task and schedules. Create and account and sign in a start creating your tasks and 
 
 <div style="text-align:center">
-<img src="static/images/collegemarket.PNG" alt="Task manager">
+<img src="static/images/home-responsive.jpg" alt="Task manager">
 </div>
 
 
@@ -25,17 +26,17 @@ As a user, I want to:
 - Access the Task Manager website seamlessly across various devices including desktops, laptops, tablets, and mobile phones.
 - See the navigation bar contain clear and descriptive menu items that represent different actions that may be performed my on my page.
 - Experience a consistent layout and design across all pages of the website, including the navigation bar's position, styling, and behavior.
-- View a list of Task I have created and their status as completed or pending
-- Click on a Task to view its detailed information including title, description, Date Due, status, Edit buttons and delete buttons
-- Create a new Task by providing details such as title, description, status and Date due an priority of the task.
+- View a list of tasks I have created and their status as completed or pending
+- Click to view detailed information of a task including title, description, Date Due, status, Edit buttons and delete buttons
+- Create a new task by providing details such as title, description, and Date due and priority of the task.
 - Modify existing Task to update information such as title, description, date due its status and priority.
 - Mark task as completed when done
-- Be able to remove only task that are marked as complete
+- Be able to remove only task that are marked as completed
 
 ## Features
 __Sign in / registration :__
 Sign in for already registered users and Registration for new users
-- .
+
 
 
  __Navigation Bar :__
@@ -43,15 +44,15 @@ Sign in for already registered users and Registration for new users
 - Home: Directs users to the home page to introduce the user to app.
 - User Registration and Sign-In Page: Allows users to create an account or sign in if already registered.
 <div style="text-align:center">
-<img src="static/images/navbar.PNG" alt="navbar">
+<img src="static/images/navbar.jpg" alt="navbar">
 </div>
 
 
 __Task listings :__
-- Comprehensive details Title, a view button, status and priority.
+- Comprehensive details of Title, a view button, status, priority.
 - Functional buttons (edit, delete) empowering users to manage Task according to their needs. The delete button only shows up for task that have been completed
 <div style="text-align:center">
-<img src="static/images/curd.PNG" alt="curd">
+<img src="static/images/task-listing.jpg" alt="curd">
 </div>
 
 
@@ -69,19 +70,19 @@ __LogIn :__
 - The login page has 2 clear options, username and password.
 - If the username and password are not correct this error will show.
 <div style="text-align:center">
-<img src="static/images/signin.PNG" alt="signin">
+<img src="static/images/login.jpg" alt="signin">
 </div>
 
 __Register :__
-- It offers them space for a First Name, Last Name, username, email(optional), password and then rechecks the password to ensure it matches and there were no errors.
+- It offers users space for a First Name, Last Name, username, email(optional), password and then rechecks the password to ensure it matches and there were no errors.
 <div style="text-align:center">
-<img src="static/images/signup.PNG" alt="signup">
+<img src="static/images/register.jpg" alt="signup">
 </div>
 
 __Add Item :__
 - It asks to complete fields like : Title, Description, Date due and priority
 <div style="text-align:center">
-<img src="static/images/additem.PNG" alt="additem">
+<img src="static/images/add-task.jpg" alt="additem">
 </div>
 
 
@@ -106,7 +107,7 @@ Django  AllAuth User Model  was used and a custom add item model was created.
 'Lato (google font)' is used for its combination of readability, professionalism, and widespread availability.
 
 ### Color Scheme
-Colors ( white and black and skiy blue ) are chosen for a clean and simple website design that keeps the focus on the content.
+Colors ( white and black and sky blue ) are chosen for a clean and simple website design that keeps the focus on the content.
 
 ## Technologies Used
 - __Languages__
@@ -121,7 +122,7 @@ Colors ( white and black and skiy blue ) are chosen for a clean and simple websi
   - Visual Studio code for development
   - GitHub Projects: used for implementing, monitoring project progress and managing tasks efficiently.
   - Balsamiq: utilised for crafting wireframes to visualise project layouts.
-  - Bootstrap and Customisation: leveraged for developing visually appealing and responsive websites, tailored to project requirements.
+  - Bootstrap and Custom css: leveraged for developing visually appealing and responsive websites, tailored to project requirements.
 
 ## Testing
 
@@ -177,6 +178,7 @@ Features which could be implemented in the future:
 
 ## Credit
 - Code Institute LMS.
+- Google (images)
 
 
 

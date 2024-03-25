@@ -51,13 +51,22 @@
 }
 
 .footer {
-    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
     color: #f0f0f0;
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
     left: 0;
+    padding: 10px;
+    z-index: 100;
+}
+
+.footer p {
+    margin-bottom: 0;
 }
 
 #mobile-menu {
@@ -88,7 +97,7 @@
     object-fit: cover; /* Ensure the image covers the entire element */
   }
 
-  .d-flex {
+.d-flex {
     gap: 20px;
     
   }
