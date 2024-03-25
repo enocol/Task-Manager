@@ -18,8 +18,8 @@
             <div class="col-8">
                 <p>{{user.username}}</p>
                 <p>{% if not user.email%}No email given{%else%}{{user.email}}{%endif%}</p>
-                <p>{{user.first_name}}</p>
-                <p>{{user.last_name}}</p>
+                <p>{% if not user.first_name%}No first name given{%else%}{{user.first_name}}{%endif%}</p>
+                <p>{% if not user.last_name%}No last name given{%else%}{{user.last_name}}{%endif%}</p>
                 <p>{{user.date_joined}}</p>
                 <p class="badge rounded-pill text-bg-primary"> {{completed}}</p>
                 <div>{{pending}}</div>
