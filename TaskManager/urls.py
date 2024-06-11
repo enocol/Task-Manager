@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from tasks import views
+from django.conf.urls import handler404
 
 
 urlpatterns = [
@@ -23,3 +25,5 @@ urlpatterns = [
     path('', include('tasks.urls')),
     path('accounts/', include("allauth.urls")),
 ]
+
+handler404 = 'tasks.views.custom_404'
