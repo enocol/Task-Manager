@@ -40,7 +40,7 @@
               </td>
               <td class="d-flex align-items-center justify-content-evenly" >
                 <a href="{% url 'edittask' task.id %}" class="fs-3 mx-2"><i class="fa-solid fa-pen-to-square"></i></a>
-                <a href="{% url 'deletetask' task.id %}" class="fs-3{% if task.completed%}btn btn-danger{%endif%}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')">{%if task.completed%}<i class="fa-solid fa-trash "></i>{%endif%}</a>
+                <a href="{% url 'deletetask' task.id %}" class="fs-3{% if task.completed%}btn btn-danger{%endif%}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')"><i class="fa-solid fa-trash "></i></a>
             </tr>
         {% endfor %}
         {% endif %}

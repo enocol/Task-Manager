@@ -40,7 +40,7 @@ def yourtasks(request):
     }
 
     return render(request, 'tasks/yourtasks.html', context)
-
+@login_required
 def edit_task(request, id):
     task = Task.objects.get(id=id)
     edit_task = EditTask(instance=task)
@@ -58,7 +58,7 @@ def edit_task(request, id):
    
 
 
-
+@login_required
 def updatetask(request, id):
     task = Task.objects.get(id=id)
     form = Addtask(instance=task)
@@ -74,7 +74,7 @@ def updatetask(request, id):
             return redirect('yourtasks')
     return render(request, 'tasks/updatetask.html', context)
 
-
+@login_required
 def taskdetails(request, id):
     task = Task.objects.get(id=id)
     completed = Updatetask(instance=task)
@@ -92,7 +92,7 @@ def taskdetails(request, id):
     return render(request, 'tasks/taskdetails.html', context)
 
 
-
+@login_required
 def into(request):
     user = request.user.id
     usertasks = Task.objects.filter(user=user)
@@ -108,7 +108,7 @@ def into(request):
     return render(request, 'tasks/into.html', context)
 
 
-
+@login_required
 def deletetask(request, id):
     task = Task.objects.get(id=id)
     task.delete()
@@ -147,5 +147,9 @@ def register_user(request):
     else:
         form = RegisterUser()
     return render(request, 'tasks/register_users.html', context)
+
+
+def custom_404(request, exception):
+    return render(request, 'tasks/404.html', status=404)
 
 

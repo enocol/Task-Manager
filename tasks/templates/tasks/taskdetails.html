@@ -31,7 +31,7 @@
           <a href="{% url 'edittask' task.id %}" ><i class="fa-solid fa-pen-to-square fs-1 m-2"></i></a>
      </div>
      <div class="col-6 float-right">
-        <a  href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')">{% if task.completed%}<i class="fa-solid fa-trash fs-1 m-2 float-end"></i>{%endif%}</a>
+        <a  href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')"><i class="fa-solid fa-trash fs-1 m-2 float-end"></i></a>
     </div>
     </div>
 </section>
