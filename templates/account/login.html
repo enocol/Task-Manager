@@ -36,6 +36,15 @@
       <p>If you have not created an account yet, then please
       <a href="{% url 'register'%}">Register</a> first.</p>
       {% endif %}
+
+   {% if messages %}
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endif %}
       
       <form class="login mb-3" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
