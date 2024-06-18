@@ -43,6 +43,10 @@ class Updatetask(forms.ModelForm):
 class RegisterUser(UserCreationForm):
     first_name = forms.CharField(max_length=100)
     last_name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    username = forms.CharField(max_length=100)
+    password1 = forms.CharField(widget=forms.PasswordInput)
+    password2 = forms.CharField(widget=forms.PasswordInput)
 
     class Meta:
         model = User

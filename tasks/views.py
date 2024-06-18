@@ -1,3 +1,6 @@
+from datetime import datetime
+
+from django.forms import ValidationError
 from .models import Task
 from django.shortcuts import redirect, render
 from django.contrib import messages
@@ -23,12 +26,15 @@ def addtask(request):
         if form.is_valid():
             task = form.save(commit=False)
             task.user = request.user
-            task.save()
+            form.save()
             messages.success(request, 'Task added successfully')
+           
             return redirect('yourtasks')
     else:
+        messages.error(request, '')
         form = Addtask()
-    return render(request, 'tasks/addtask.html', context)
+
+    return render(request, 'tasks/addtask.html', {messages: messages, 'form': form})
 
 @login_required
 def yourtasks(request):

@@ -12,6 +12,14 @@
             Add a new task to your list.
         </p>
         <form action="{% url 'addtask'%}" method="post">
+            {% if messages %}
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                {% for message in messages %}
+                {{message}}
+                {% endfor %}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
             {% csrf_token %}
             {{form | crispy}}
            <div class="d-flex justify-content-between">

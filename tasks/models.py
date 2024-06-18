@@ -1,6 +1,11 @@
+from urllib import request
 from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
+from django.shortcuts import render
+from django.core.exceptions import ValidationError
+from django.utils import timezone
+
 
 # Create your models here.
 
@@ -22,3 +27,14 @@ class Task(models.Model):
 
     def __str__(self):
         return f"{self.title} was created by: {self.user}"
+    
+    def clean(self):
+        super().clean()
+        due_date = self.due_date
+        if due_date and timezone.is_naive(due_date):
+            due_date = timezone.make_aware(due_date, timezone.get_current_timezone())
+        
+        if due_date <= timezone.now():
+            raise ValidationError('Due date must be a future date and time.')
+    
+   
