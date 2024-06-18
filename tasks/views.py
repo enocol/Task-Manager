@@ -12,7 +12,10 @@ from django.contrib.auth import login
 # Create your views here.
 
 def home(request):
-    return render(request, 'tasks/home.html')
+    if request.user.is_authenticated:
+        return redirect('into')
+    else:
+      return render(request, 'tasks/home.html')
 
 
 def addtask(request):
@@ -144,14 +147,8 @@ def register_user(request):
         form = RegisterUser(request.POST)
         if form.is_valid():
             form.save()
-            # username = form.cleaned_data.get('username')
-            # password = form.cleaned_data.get('password1')
-            # user = authenticate(username=username, password=password)  # Use the authenticate function
-            # login(request, user)
-            
             messages.success(request, 'User registered successfully')
             return redirect('account_login')
-            # return redirect('account/login/')
     else:
         form = RegisterUser()
     return render(request, 'tasks/register_users.html', context)
