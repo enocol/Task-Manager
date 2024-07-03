@@ -1,7 +1,9 @@
+from django.shortcuts import render
 from . models import Task
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.core.exceptions import ValidationError
 
 
 
@@ -15,28 +17,21 @@ class Addtask(forms.ModelForm):
 
 
 class EditTask(forms.ModelForm):
+    title = forms.CharField(max_length=100)
+    description = forms.CharField(max_length=500)
+    due_date = forms.DateTimeField()
+    completed = forms.BooleanField(required=False, label='Mark as completed')
     class Meta():
         model = Task
         fields = ['title', 'description', 'due_date', 'completed', 'priority']
-        widgets = {
-            'due_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
-        }
+     
 
 class Updatetask(forms.ModelForm):
+    completed = forms.BooleanField(required=False, label='Mark as completed')
     
     class Meta():
         model = Task
         fields = ['completed']
-        widgets = {
-            'completed': forms.CheckboxInput(attrs={'class': 'form-check-input m-2',
-                                                     'type': 'checkbox', 
-                                                    'id':'completed',
-                                                    'label': 'Mark as completed',
-                                                    'required': False,
-                                                    'for': 'completed',
-                                                    'name': 'completed'
-                                                    })
-        }
 
 
 
@@ -45,10 +40,37 @@ class RegisterUser(UserCreationForm):
     last_name = forms.CharField(max_length=100)
     email = forms.EmailField()
     username = forms.CharField(max_length=100)
-    password1 = forms.CharField(widget=forms.PasswordInput)
-    password2 = forms.CharField(widget=forms.PasswordInput)
+    password1 = forms.CharField(widget=forms.PasswordInput, label='Password',  help_text=(
+            'Password must be at least 8 characters long.<br>'
+            'Password must have letters and numbers.<br>'
+            'Password cannot be all letters.<br>'
+            'Password cannot be all numbers.'
+        ), min_length=8)
+    password2 = forms.CharField(widget=forms.PasswordInput, label='Confirm Password', help_text='Enter the same password as before, for verification', min_length=8)
+
+
+
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'username', 'email']
+        fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
+
+    
+   
        
+
+class UsernameForm(forms.Form):
+    username = forms.CharField(max_length=150, label='Username')
+
+    class Meta:
+        model = User
+        fields = ['username']
+
+
+class PasswordResetForm(forms.Form):
+    username = forms.CharField(max_length=150, label='Username')
+    password1 = forms.CharField(widget=forms.PasswordInput, label='New Password')
+    password2 = forms.CharField(widget=forms.PasswordInput, label='Confirm Password')
+    class Meta:
+       model = User
+       fields = ['username','password1', 'password2']
