@@ -21,7 +21,7 @@ Welcome to Task Manager,the app you can rely on the manage you daily task and sc
 * [Future Features](#future-features)
 * [Credits](#credits)
 
-## User Experience (UX)
+## User Experience / User Stories (UX)
 As a user, I want to:
 - Access the Task Manager website seamlessly across various devices including desktops, laptops, tablets, and mobile phones.
 - See the navigation bar contain clear and descriptive menu items that represent different actions that may be performed my on my page.
