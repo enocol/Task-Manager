@@ -30,7 +30,7 @@ As a user, I want to:
 - Click to view detailed information of a task including title, description, Date Due, status, Edit buttons and delete buttons
 - Create a new task by providing details such as title, description, and Date due and priority of the task.
 - Modify existing Task to update information such as title, description, date due its status and priority.
-- Mark task as completed when done
+- Mark mark task as completed
 - Be able to remove only task that are marked as completed
 
 ## Features
