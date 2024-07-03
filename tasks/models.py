@@ -35,6 +35,6 @@ class Task(models.Model):
             due_date = timezone.make_aware(due_date, timezone.get_current_timezone())
         
         if due_date <= timezone.now():
-            raise ValidationError('Due date must be a future date and time.')
+            raise ValidationError('Due date can not be a date that has already passed.')
     
    
