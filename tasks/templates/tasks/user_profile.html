@@ -12,8 +12,7 @@
                 <p>First Name:</p>
                 <p>Last Name:</p>
                 <p>Date Joined:</p>
-                <p>Completed</p>
-                <p>Pending</p>
+                
             </div>
             <div class="col-8">
                 <p>{{user.username}}</p>
@@ -21,8 +20,8 @@
                 <p>{% if not user.first_name%}No first name given{%else%}{{user.first_name}}{%endif%}</p>
                 <p>{% if not user.last_name%}No last name given{%else%}{{user.last_name}}{%endif%}</p>
                 <p>{{user.date_joined}}</p>
-                <p class="badge rounded-pill text-bg-primary"> {{completed}}</p>
-                <div>{{pending}}</div>
+                
+                
             </div>
     </div>
     <a href="{% url 'yourtasks'%}" class="btn btn-primary btn-sm m-2">Back</a>
