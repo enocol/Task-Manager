@@ -1,17 +1,20 @@
 from datetime import datetime
 
 from django.forms import ValidationError
-from .models import Task
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth import authenticate 
-from .form import Addtask, RegisterUser, Updatetask, EditTask
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login
+from .form import Addtask, RegisterUser, Updatetask, EditTask
+from .models import Task
+from tasks.form import PasswordResetForm, UsernameForm
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import make_password
 
 # Create your views here.
 
 def home(request):
+    '''This function is used to render the home page of the application'''
     if request.user.is_authenticated:
         return redirect('into')
     else:
@@ -19,6 +22,7 @@ def home(request):
 
 
 def addtask(request):
+    '''This function is used to add a task to the database'''
     form = Addtask()
     context = {
         'form': form
@@ -41,6 +45,7 @@ def addtask(request):
 
 @login_required
 def yourtasks(request):
+    '''This function is used to render the tasks of the logged in user'''
     user = request.user.id
     task = Task.objects.filter(user = user).order_by('created_on')
     context = {
@@ -49,8 +54,11 @@ def yourtasks(request):
     }
 
     return render(request, 'tasks/yourtasks.html', context)
+
+
 @login_required
 def edit_task(request, id):
+    '''This function is used to edit a task in the database'''
     task = Task.objects.get(id=id)
     edit_task = EditTask(instance=task)
     context = {
@@ -69,6 +77,7 @@ def edit_task(request, id):
 
 @login_required
 def updatetask(request, id):
+    '''This function is used to update a task in the database'''
     task = Task.objects.get(id=id)
     form = Addtask(instance=task)
     context = {
@@ -85,6 +94,7 @@ def updatetask(request, id):
 
 @login_required
 def taskdetails(request, id):
+    '''This function is used to render the details of a task'''
     task = Task.objects.get(id=id)
     completed = Updatetask(instance=task)
     context = {
@@ -103,6 +113,7 @@ def taskdetails(request, id):
 
 @login_required
 def into(request):
+    '''This function is used to render the dashboard of the application'''
     user = request.user.id
     usertasks = Task.objects.filter(user=user)
     completed = usertasks.filter(completed=True).count()
@@ -119,13 +130,15 @@ def into(request):
 
 @login_required
 def deletetask(request, id):
+    '''This function is used to delete a task from the database'''
     task = Task.objects.get(id=id)
     task.delete()
     messages.success(request, 'Task deleted successfully')
     return redirect('yourtasks')
 
-
+@login_required
 def user_profile(request):
+    '''This function is used to render the profile of the logged in user'''
     user = request.user.id
     usertasks = Task.objects.filter(user=user)
     completed = usertasks.filter(completed=True).count()
@@ -138,23 +151,79 @@ def user_profile(request):
 
 
 def register_user(request):
+    '''This function is used to register a new user'''
     register_form = RegisterUser()
     context = {
         'register': register_form
     }
 
     if request.method == 'POST':
-        form = RegisterUser(request.POST)
+        form = RegisterUser(data=request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'User registered successfully')
             return redirect('account_login')
+        else:
+            messages.error(request, 'User not registered')
     else:
         form = RegisterUser()
     return render(request, 'tasks/register_users.html', context)
 
 
 def custom_404(request, exception):
+    '''This function is used to render the 404 page'''
     return render(request, 'tasks/404.html', status=404)
 
 
+def check_user(request):
+    '''This function is used to check if a user exists in the database to reset the password'''
+    username_form = UsernameForm()
+    if request.method == 'POST':
+        username_form = UsernameForm(request.POST)
+        input_username = request.POST.get('username')
+        username = User.objects.filter(username = input_username)
+        if username.exists():
+            messages.success(request, 'Username exists')
+            username = request.POST.get('username')
+            return redirect('password_reset1')
+        else:
+            messages.error(request, 'Username does not exist')
+            username_form = UsernameForm()
+            return render(request, 'password_reset.html', {'username_form': username_form, 'username': input_username})
+    return render(request, 'password_reset.html', {'username_form': username_form})
+
+
+def password_reset(request):
+    '''This function is used to reset the password of a user'''
+    password_form = PasswordResetForm()
+    if request.method == 'POST':
+        password_form = PasswordResetForm(request.POST)
+        if password_form.is_valid():
+            password = request.POST.get('password1')
+            confirm_password = request.POST.get('password2')
+            try:
+               user = User.objects.get(username=request.POST.get('username'))
+            except User.DoesNotExist:
+                messages.error(request, 'User does not exist')
+                return redirect('check_user')
+            if password == confirm_password:
+                user.password = make_password(password)
+                user.save()
+                messages.success(request, 'Password reset successfully')
+                return redirect('account_login')
+            else:
+                messages.error(request, 'Passwords do not match')
+                context = {
+                    'password_form': password_form,
+                    'username': request.POST.get('username')
+                }
+                return render(request, 'password_reset1.html', context)
+        else:
+            messages.error(request, 'Passwords do not match')
+            password_form = PasswordResetForm()
+            context = {
+                'password_form': password_form,
+                'username': request.POST.get('username')
+            }
+            return render(request, 'password_reset1.html', context)
+    return render(request, 'password_reset1.html', {'password_form': password_form})
