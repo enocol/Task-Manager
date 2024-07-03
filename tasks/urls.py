@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from tasks import views
 
 
 
@@ -15,4 +15,6 @@ urlpatterns = [
     path('into/', views.into, name='into'),
     path('task/edit/<int:id>', views.edit_task, name='edittask'),
     path('userprofile/', views.user_profile, name='userprofile'),
+    path('accounts/checkuser/', views.check_user, name='check_user'),
+    path('accounts/password_reset/', views.password_reset, name='password_reset1'),
 ]
