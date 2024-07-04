@@ -122,19 +122,18 @@ Colors ( white and black and sky blue ) are chosen for a clean and simple websit
 ## Manual Testing
 | **TEST** | **ACTION** | **EXPECTATION** | **RESULT** | 
 |----------|------------|-----------------|------------|
-| Navbar Home Link | Navigation link | When click on it goes to the home page |Worked as expected |
-| Navbar About Link | Navigation link | When click on it goes to the about page |Worked as expected |
-| Navbar  Register Link | Navigation link | Get taken to register page |Worked as expected |
-| Navbar  Sign In Link | Navigation link | Get taken to sign in page |Worked as expected |
-| Navbar  Sign Out Link | Navigation link | Get taken to sign out page |Worked as expected |
-| Navbar  Add Item Link | Navigation link | Get taken to add item page |Worked as expected |
-| Sign Up Button | Clicked button | Form is submitted and go to home page | Worked as expecte |
-| Sign in Button | Clicked button | Request is submitted and go to home page | Worked as expecte |
-| Sign out Button | Clicked button | Request is submitted and go to home page | Worked as expecte |
-| Tasks | Show task title, a view botton when clicked goes to the task details page | Worked as expected | 
-| Add task | Clicked button | Submit task add form | Work as expected |
-| Edit Button | Clicked button | Edit a task | Work as expected |
-| Delete Button | Clicked button | Deletes tasks marked as completed | Work as expected |
+| Navbar Home Link | Home link | When click on it goes to the home page |Worked as expected |
+| Navbar About Link | About link | When click on it goes to the about page |Worked as expected |
+| Navbar  Register Link | Register link | Get taken to register page |Worked as expected |
+| Navbar  Sign In Link | Sign in link | Get taken to sign in page |Worked as expected |
+| Navbar  Sign Out Link | Signout link | Get taken to sign out page |Worked as expected |
+| Navbar  Add Item Link | Add task link | Get taken to add task page |Worked as expected |
+| Sign Up Button | Clicked button | Form is submitted and go to signin page | Worked as expecte |
+| Sign in Button | Clicked button | Request is submitted and go to home page of the user | Worked as expecte |
+| Sign out Button | Clicked button | Request is submitted and go to logout home page | Worked as expecte |
+| Add task | Clicked button | goes to the add task page | Work as expected |
+| Edit Button | Clicked button | goes to Edit a task page | Work as expected |
+| Delete Button | Clicked button | A task is deleted | Work as expected |
 | Back to home Button | Clicked button | Go back to home page | Work as expected |
 
 
