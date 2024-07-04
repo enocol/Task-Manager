@@ -6,6 +6,7 @@ from django.utils import timezone
 
 
 class Task(models.Model):
+    ''''This class is used to create a task model in the database'''
     OPTIONS = (
         ('Low', 'Low'),
         ('Normal', 'Normal'),
