@@ -12,8 +12,8 @@
         <div class="col-md-8">
             <div class="card ">
                 <div class="card-body">
-                    <h5 class="card-title">{{task.title}}</h5>
-                    <p class="card-text">{{task.description}}</p>
+                    <p><span class="card-title">Title: </span> {{task.title}}</p>
+                    <p class="card-text"><span>Description: </span> {{task.description}}</p>
                     <p class="card-text">Status: {% if task.completed %}Completed{% else %}Pending{% endif %}</p>
                     <p class="card-text">Due Date: {{task.due_date}}</p>
                     <p class="card-text">Created: {{task.created_on}}</p>
@@ -28,10 +28,10 @@
     </div>
     <div class="row">
     <div class="col-6">
-          <a href="{% url 'edittask' task.id %}" ><i class="fa-solid fa-pen-to-square fs-1 m-2"></i></a>
+          <a href="{% url 'edittask' task.id %}" ><button class="btn btn-primary m-2 m-s">Edit Task</button></a>
      </div>
-     <div class="col-6 float-right">
-        <a  href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')"><i class="fa-solid fa-trash fs-1 m-2 float-end"></i></a>
+     <div class="col-6">
+        <a  href="{% url 'deletetask' task.id %}" onclick="return confirm('Are you sure you want to delete {{task.title}}?')"><button class="btn btn-primary m-2 m-s">Delete Task</button></a>
     </div>
     </div>
 </section>
