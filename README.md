@@ -31,7 +31,7 @@ As a user, I want to:
 - Create a new task by providing details such as title, description, and Date due and priority of the task.
 - Modify existing Task to update information such as title, description, date due its status and priority.
 - Mark mark task as completed
-- Be able to remove only task that are marked as completed
+- Be able to delete a task
 
 ## Features
 __Sign in / registration :__
@@ -83,7 +83,9 @@ __Add Item :__
 ## Design
 
 ### Balsamiq wireframe
-Balsamiq was used to create a low-fidelity wireframe for design purposes.
+Balsamiq was used to create a low-fidelity wireframe for design purposes. The design is aimed at having a simple interface (to be improved) that allows easy navigation from one section to another by providing a navigation menu with options when user is not logged in and options for when users are logged in. A signin and  register pages with thier navation links on the navbar for quick and easy navigation to these page.
+The general design patter is such that, users can interact with the application by using the navbar and other actions could be performed on the application by the items displayed under the navbar
+
 
 <div style="display: flex;">
     <img src="static/images/wireframe.png" alt="Home Page" style="width: 50%;">
@@ -122,19 +124,18 @@ Colors ( white and black and sky blue ) are chosen for a clean and simple websit
 ## Manual Testing
 | **TEST** | **ACTION** | **EXPECTATION** | **RESULT** | 
 |----------|------------|-----------------|------------|
-| Navbar Home Link | Navigation link | When click on it goes to the home page |Worked as expected |
-| Navbar About Link | Navigation link | When click on it goes to the about page |Worked as expected |
-| Navbar  Register Link | Navigation link | Get taken to register page |Worked as expected |
-| Navbar  Sign In Link | Navigation link | Get taken to sign in page |Worked as expected |
-| Navbar  Sign Out Link | Navigation link | Get taken to sign out page |Worked as expected |
-| Navbar  Add Item Link | Navigation link | Get taken to add item page |Worked as expected |
-| Sign Up Button | Clicked button | Form is submitted and go to home page | Worked as expecte |
-| Sign in Button | Clicked button | Request is submitted and go to home page | Worked as expecte |
-| Sign out Button | Clicked button | Request is submitted and go to home page | Worked as expecte |
-| Tasks | Show task title, a view botton when clicked goes to the task details page | Worked as expected | 
-| Add task | Clicked button | Submit task add form | Work as expected |
-| Edit Button | Clicked button | Edit a task | Work as expected |
-| Delete Button | Clicked button | Deletes tasks marked as completed | Work as expected |
+| Navbar Home Link | Home link clicked | When click on it goes to the home page |Worked as expected |
+| Navbar About Link | About link clicked | When click on it goes to the about page |Worked as expected |
+| Navbar  Register Link | Register link clicked | Get taken to register page |Worked as expected |
+| Navbar  Sign In Link | Sign in link clicked | Get taken to sign in page |Worked as expected |
+| Navbar  Sign Out Link | Signout link clicked | Get taken to sign out page |Worked as expected |
+| Navbar  Add Item Link | Add task link clicked | Get taken to add task page |Worked as expected |
+| Sign Up Button | Clicked button | Form is submitted and go to signin page | Worked as expecte |
+| Sign in Button | Clicked button | Request is submitted and go to home page of the user | Worked as expecte |
+| Sign out Button | Clicked button | Request is submitted and go to logout home page | Worked as expecte |
+| Add task | Clicked button | goes to the add task page | Work as expected |
+| Edit Button | Clicked button | goes to Edit a task page | Work as expected |
+| Delete Button | Clicked button | A task is deleted | Work as expected |
 | Back to home Button | Clicked button | Go back to home page | Work as expected |
 
 
