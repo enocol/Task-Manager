@@ -83,7 +83,9 @@ __Add Item :__
 ## Design
 
 ### Balsamiq wireframe
-Balsamiq was used to create a low-fidelity wireframe for design purposes.
+Balsamiq was used to create a low-fidelity wireframe for design purposes. The design is aimed at having a simple interface (to be improved) that allows easy navigation from one section to another by providing a navigation menu with options when user is not logged in and options for when users are logged in. A signin and  register pages with thier navation links on the navbar for quick and easy navigation to these page.
+The general design patter is such that, users can interact with the application by using the navbar and other actions could be performed on the application by the items displayed under the navbar
+
 
 <div style="display: flex;">
     <img src="static/images/wireframe.png" alt="Home Page" style="width: 50%;">
