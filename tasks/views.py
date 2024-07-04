@@ -1,9 +1,5 @@
-from datetime import datetime
-
-from django.forms import ValidationError
 from django.shortcuts import redirect, render
 from django.contrib import messages
-from django.contrib.auth import authenticate 
 from django.contrib.auth.decorators import login_required
 from .form import Addtask, RegisterUser, Updatetask, EditTask
 from .models import Task
@@ -11,7 +7,6 @@ from tasks.form import PasswordResetForm, UsernameForm
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 
-# Create your views here.
 
 def home(request):
     '''This function is used to render the home page of the application'''
