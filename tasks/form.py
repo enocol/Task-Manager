@@ -46,10 +46,10 @@ class RegisterUser(UserCreationForm):
     email = forms.EmailField()
     username = forms.CharField(max_length=100)
     password1 = forms.CharField(widget=forms.PasswordInput, label='Password',  help_text=(
-            'Password must be at least 8 characters long.<br>'
+            'Password must be at least 10 characters long.<br>'
             'Password must have letters and numbers.<br>'
             'Password cannot be all letters.<br>'
-            'Password cannot be all numbers.'
+            'Password cannot be all numbers but should have a least 1 number.'
         ), min_length=8)
     password2 = forms.CharField(widget=forms.PasswordInput, label='Confirm Password', help_text='Enter the same password as before, for verification', min_length=8)
 
