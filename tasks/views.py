@@ -153,12 +153,17 @@ def register_user(request):
 
     if request.method == 'POST':
         form = RegisterUser(data=request.POST)
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+        if password1 != password2:
+            messages.error(request, 'Passwords do not match')
+            return render(request, 'tasks/register_users.html', context)
         if form.is_valid():
             form.save()
             messages.success(request, 'User registered successfully')
             return redirect('account_login')
         else:
-            messages.error(request, 'User not registered')
+            messages.error(request, 'User not registered. Ensure password has correct format and try again.')
     else:
         form = RegisterUser()
     return render(request, 'tasks/register_users.html', context)
