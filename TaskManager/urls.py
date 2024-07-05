@@ -8,7 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('tasks.urls')),
     path('accounts/', include("allauth.urls")),
-    
 ]
 
 handler404 = 'tasks.views.custom_404'
+# handler500 = 'tasks.views.custom_500'
