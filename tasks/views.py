@@ -6,6 +6,7 @@ from .models import Task
 from tasks.form import PasswordResetForm, UsernameForm
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
+from django.contrib.auth import logout
 
 
 def home(request):
@@ -147,6 +148,9 @@ def user_profile(request):
 
 def register_user(request):
     '''This function is used to register a new user'''
+    if request.user.is_authenticated:
+       logout(request)
+       return redirect('register')
     register_form = RegisterUser()
     context = {
         'register': register_form
@@ -168,6 +172,10 @@ def register_user(request):
 def custom_404(request, exception):
     '''This function is used to render the 404 page'''
     return render(request, 'tasks/404.html', status=404)
+
+def redirect_account_signup(request):
+    '''This function is used to redirect the user to the registration page'''
+    return redirect('register')
 
 
 def check_user(request):
