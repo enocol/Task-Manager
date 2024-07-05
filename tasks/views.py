@@ -1,9 +1,9 @@
-from django.shortcuts import redirect, render
-from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from .form import Addtask, RegisterUser, Updatetask, EditTask
 from .models import Task
 from tasks.form import PasswordResetForm, UsernameForm
+from django.shortcuts import redirect, render
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import logout
@@ -31,12 +31,10 @@ def addtask(request):
             task.user = request.user
             form.save()
             messages.success(request, 'Task added successfully')
-           
             return redirect('yourtasks')
     else:
         messages.error(request, '')
         form = Addtask()
-
     return render(request, 'tasks/addtask.html', {messages: messages, 'form': form})
 
 @login_required
@@ -48,7 +46,6 @@ def yourtasks(request):
         'tasks': task,
 
     }
-
     return render(request, 'tasks/yourtasks.html', context)
 
 
@@ -119,8 +116,6 @@ def into(request):
         'completed': completed,
         'pending': pending,
     }
-
-
     return render(request, 'tasks/into.html', context)
 
 
