@@ -17,4 +17,5 @@ urlpatterns = [
     path('userprofile/', views.user_profile, name='userprofile'),
     path('accounts/checkuser/', views.check_user, name='check_user'),
     path('accounts/password_reset/', views.password_reset, name='password_reset1'),
+    path('accounts/signup/', views.redirect_account_signup, name='redirect_account_signup'),
 ]
